@@ -1,0 +1,172 @@
+.main {
+  padding-top: 70px;
+  min-height: 100%;
+}
+
+section {
+  width: 80%;
+  margin: 75px auto;
+  box-shadow: 1px 1px 2px 0 darken(#CCC, 10%);
+  background-color: #FFF;
+  box-sizing: border-box;
+
+  h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: lighten(blue, 10%);
+      text-decoration: underline;
+    }
+  }
+  hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-color: #ddd;
+  }
+  img {
+    width: 100%;
+  }
+
+}
+
+.pic {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  img {
+    position: relative;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
+  img:hover, img:focus, img:active {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  .list-page {
+    color: #FFFFFF;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    h2 {
+      font-size: 2rem;
+    }
+    .title {
+      text-decoration: none;
+    }
+  }
+}
+
+.pub-info {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.pub-left {
+  margin-left: -1.7rem;
+}
+
+.pub-right {
+  float: right;
+  margin-right: -1rem;
+}
+
+.article-info {
+  padding: 1px 10%;
+}
+
+.article-post-meta {
+  cursor: pointer;
+}
+
+article {
+  line-height: 1.6;
+  font-size: 1rem;
+  padding: 40px 10% 25px 10%;
+  word-wrap: break-word;
+  word-break: break-all;
+  img {
+    max-width: 100%;
+    border-radius: .5rem;
+    margin: 8px 0;
+  }
+}
+.article-info .author-info {
+  overflow: hidden;
+}
+.article-info .author-info .author {
+  float: left;
+}
+.article-info .author-info .author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.article-info .author-info .time {
+  float: right;
+  line-height: 40px;
+}
+.read {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.other-info {
+  font-size: 15px;
+  padding: 0 8% 4px 8%;
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  & > li {
+    padding: 0 7px;
+  }
+  .tags {
+    margin-bottom: 10px;
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    li {
+      padding: 0 4px;
+      font-size: 13px;
+
+    }
+    li:first-child {
+      padding-left: 0;
+    }
+  }
+}
+
+.bl-transition {
+  transition: all .8s ease-out;
+  position: relative;
+  left: 0;
+  top: 0;
+  opacity: 1;
+}
+
+.bl-enter,
+.bl-leave {
+  position: relative;
+  left: 0;
+  top: -200px;
+  opacity: 0;
+}
+

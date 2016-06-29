@@ -1,0 +1,39 @@
+.pagination{
+	font-size:0;
+	position:relative;
+	width:70%;
+	margin:0 auto;
+	margin-top:20px;
+	padding:0;
+	li{
+		position:absolute;
+		list-style:none;
+		display:inline-block;
+		top:0;
+		&:first-child{
+			left:5%;
+		}
+		&:last-child{
+			right:5%;
+		}
+	}
+	a{
+		font-size:35px;
+		color:#c2c2c2;
+		
+		&:hover{
+			color:#333 !important;
+			text-decoration:none;
+		}
+
+		&:active,
+		&:focus,
+		&:visited{
+			font-size: 35px;
+			color: #c2c2c2;
+		}
+
+	}
+
+
+}

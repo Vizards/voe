@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<meta name="description" content="{{meta_description}}">
+		<title>{{meta_title}}</title>
+		<link rel="shortcut icon" href="{{asset '/favicon.ico'}}" type="image/x-icon">
+        <link href="//cdn.bootcss.com/highlight.js/9.4.0/styles/monokai-sublime.min.css" rel="stylesheet">        <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{asset 'b.css'}}">
+        {{ghost_head}}
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<div class="p-bar"></div>
+				<div class="brand">
+					<a href="/">{{@blog.title}}</a>
+					<p>愿有岁月可回首，且以深情共白头</p>
+				</div>
+				<div class="res">
+					<div class="s-brand">
+						<img src="{{@blog.logo}}" alt="brand" height='50'>
+					</div>
+					<a class="fa fa-navicon fa-lg more"></a>
+				</div>
+				{{navigation}}
+			</header>
+			<div class="main">
+				{{{ body }}}
+			</div>
+			<footer class="container-fluid">
+				<div class="row">
+					<div class="about-me col-sm-6">
+						<img src="{{@blog.logo}}" alt="avatar" title="don't touch me~">
+						<blockquote>
+							97年双鱼直男,在校学生,伪前端,非科班.<br>	爱好:追番,撸码,睡觉(～﹃～)~zZ......<br>
+							常用语言:javascript,NodeJS,中文,English
+						</blockquote>
+					</div>
+					<div class="col-sm-6">
+						<!-- 不知道放什么 -->
+					</div>
+				</div>
+				<div class="row">
+					<ul class="follow-me col-sm-6">
+						<li><a href="http://weibo.com/philomilan" target="_blank"><i class="fa fa-weibo"></i></a></li>
+						<li><a href="https://github.com/Vizards" target="_blank"><i class="fa fa-github"></i></a></li>
+						<li><a href="{{@blog.url}}/rss/"><i class="fa fa-rss" target="_blank"></i></a></li>
+					</ul>
+					<span class="copyright col-sm-6">
+                        <a href="http://www.miitbeian.gov.cn/">皖 ICP 备 16010497 号</a>
+                        <p>Copyright © 2016 <a href="https://vizards.cc">Varea</a> All Rights Reserved</p>
+                    </span>
+				</div>
+			</footer>
+		</div>
+        <script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
+        <script>
+            var pages = {{pagination.pages}};
+            var duoshuoQuery = {short_name:"varea"};
+            $(document).ready(function(){ findLink(); });
+            function findLink(){
+                var self =null;
+                var timer = setTimeout(findLink,200);
+                $('link[rel*=stylesheet]').each(function(i){
+                    var hrefStr = $(this).attr("href");
+                    if(hrefStr.indexOf('styles/embed')> 0){
+                        self = $(this);
+                        self.remove();
+                        clearTimeout(timer);
+                    }
+                });
+            }
+        </script>
+        <script type="text/javascript" src="{{asset 'b.js'}}"></script>
+	</body>
+</html>
