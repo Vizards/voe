@@ -10,17 +10,15 @@
 		<title>{{meta_title}}</title>
 		<link rel="shortcut icon" href="{{asset '/favicon.ico'}}" type="image/x-icon">
         <link href="//cdn.bootcss.com/highlight.js/9.4.0/styles/monokai-sublime.min.css" rel="stylesheet">        <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{asset 'b.css'}}">
         {{ghost_head}}
 	</head>
 	<body>
 		<div id="app">
 			<header>
-				<div class="p-bar"></div>
-				<div class="brand">
-					<a href="/">{{@blog.title}}</a>
+                <a href="/">{{@blog.title}}</a>
 					<p>愿有岁月可回首，且以深情共白头</p>
-				</div>
 				<div class="res">
 					<div class="s-brand">
 						<img src="{{@blog.logo}}" alt="brand" height='50'>

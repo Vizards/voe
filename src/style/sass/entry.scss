@@ -1,19 +1,68 @@
-html{
-	height:100%;
-	font-size:16px;
-    font-family: "Helvetica Neue","Arial","PingFang SC","Hiragino Sans GB","STHeiti","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+html {
+    height: 100%;
+    font-size: 16px;
+    font-family: "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     text-rendering: optimizeLegibility;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
 
-body{
+body {
     margin: 0;
-	color:lighten(#000,20%);
-	height:100%;
-	background-color:#f2f2f2;
-	font-size:16px;
+    color: lighten(#000, 20%);
+    height: 100%;
+    background-color: #f2f2f2;
+    font-size: 16px;
 }
+
+/* calligraffitti-regular - latin */
+@font-face {
+    font-family: 'Calligraffitti';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/calligraffitti-v7-latin/calligraffitti-v7-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Calligraffitti'), local('Calligraffitti-Regular'),
+    url('/assets/fonts/calligraffitti-v7-latin/calligraffitti-v7-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/assets/fonts/calligraffitti-v7-latin/calligraffitti-v7-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/assets/fonts/calligraffitti-v7-latin/calligraffitti-v7-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('/assets/fonts/calligraffitti-v7-latin/calligraffitti-v7-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/assets/fonts/calligraffitti-v7-latin/calligraffitti-v7-latin-regular.svg#Calligraffitti') format('svg'); /* Legacy iOS */
+}
+
+/* meddon-regular - latin */
+@font-face {
+    font-family: 'Meddon';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/meddon-v9-latin/meddon-v9-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Meddon'),
+    url('/assets/fonts/meddon-v9-latin/meddon-v9-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/assets/fonts/meddon-v9-latin/meddon-v9-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/assets/fonts/meddon-v9-latin/meddon-v9-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('/assets/fonts/meddon-v9-latin/meddon-v9-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/assets/fonts/meddon-v9-latin/meddon-v9-latin-regular.svg#Meddon') format('svg'); /* Legacy iOS */
+}
+
+/* 八大山人字体 */
+@font-face {
+    font-family: 'Chinese';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/chinese.ttf');
+}
+
+/* font-diao */
+@font-face {
+    font-family: 'fontdiao';
+    src: url('/assets/fonts/fontdiao/fontdiao.eot'); /* IE9*/
+    src: url('/assets/fonts/fontdiao/fontdiao.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/assets/fonts/fontdiao/fontdiao.woff') format('woff'), /* chrome、firefox */
+    url('/assets/fonts/fontdiao/fontdiao.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//assets/fonts/fontdiao/fontdiao.svg#iconfont') format('svg'); /* iOS 4.1- */
+    font-weight: normal;
+    font-style: normal;
+}
+
 article,
 aside,
 details,
@@ -26,29 +75,29 @@ menu,
 nav,
 section,
 summary {
-  display: block;
+    display: block;
 }
 
 audio,
 canvas,
 progress,
 video {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
+    display: inline-block; /* 1 */
+    vertical-align: baseline; /* 2 */
 }
 
 audio:not([controls]) {
-  display: none;
-  height: 0;
+    display: none;
+    height: 0;
 }
 
 [hidden],
 template {
-  display: none;
+    display: none;
 }
 
 a {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 /**
@@ -57,8 +106,9 @@ a {
 
 a:active,
 a:hover {
-  outline: 0;
+    outline: 0;
 }
+
 /* Text-level semantics
    ========================================================================== */
 
@@ -67,7 +117,7 @@ a:hover {
  */
 
 abbr[title] {
-  border-bottom: 1px dotted;
+    border-bottom: 1px dotted;
 }
 
 /**
@@ -76,7 +126,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 /**
@@ -84,7 +134,7 @@ strong {
  */
 
 dfn {
-  font-style: italic;
+    font-style: italic;
 }
 
 /**
@@ -93,8 +143,8 @@ dfn {
  */
 
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+    font-size: 2em;
+    margin: 0.67em 0;
 }
 
 /**
@@ -102,8 +152,8 @@ h1 {
  */
 
 mark {
-  background: #ff0;
-  color: #000;
+    background: #ff0;
+    color: #000;
 }
 
 /**
@@ -111,7 +161,7 @@ mark {
  */
 
 small {
-  font-size: 80%;
+    font-size: 80%;
 }
 
 /**
@@ -120,18 +170,18 @@ small {
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
 }
 
 sup {
-  top: -0.5em;
+    top: -0.5em;
 }
 
 sub {
-  bottom: -0.25em;
+    bottom: -0.25em;
 }
 
 /* Embedded content
@@ -142,7 +192,7 @@ sub {
  */
 
 img {
-  border: 0;
+    border: 0;
 }
 
 /**
@@ -150,7 +200,7 @@ img {
  */
 
 svg:not(:root) {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 /* Grouping content
@@ -161,7 +211,7 @@ svg:not(:root) {
  */
 
 figure {
-  margin: 1em 40px;
+    margin: 1em 40px;
 }
 
 /**
@@ -169,8 +219,8 @@ figure {
  */
 
 hr {
-  box-sizing: content-box;
-  height: 0;
+    box-sizing: content-box;
+    height: 0;
 }
 
 /**
@@ -178,7 +228,7 @@ hr {
  */
 
 pre {
-  overflow: auto;
+    overflow: auto;
 }
 
 /**
@@ -189,8 +239,8 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
+    font-family: monospace, monospace;
+    font-size: 1em;
 }
 
 /* Forms
@@ -213,9 +263,9 @@ input,
 optgroup,
 select,
 textarea {
-  color: inherit; /* 1 */
-  font: inherit; /* 2 */
-  margin: 0; /* 3 */
+    color: inherit; /* 1 */
+    font: inherit; /* 2 */
+    margin: 0; /* 3 */
 }
 
 /**
@@ -223,7 +273,7 @@ textarea {
  */
 
 button {
-  overflow: visible;
+    overflow: visible;
 }
 
 /**
@@ -235,7 +285,7 @@ button {
 
 button,
 select {
-  text-transform: none;
+    text-transform: none;
 }
 
 /**
@@ -250,8 +300,8 @@ button,
 html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button; /* 2 */
-  cursor: pointer; /* 3 */
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
 }
 
 /**
@@ -260,7 +310,7 @@ input[type="submit"] {
 
 button[disabled],
 html input[disabled] {
-  cursor: default;
+    cursor: default;
 }
 
 /**
@@ -269,8 +319,8 @@ html input[disabled] {
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 /**
@@ -279,7 +329,7 @@ input::-moz-focus-inner {
  */
 
 input {
-  line-height: normal;
+    line-height: normal;
 }
 
 /**
@@ -292,8 +342,8 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
 }
 
 /**
@@ -304,7 +354,7 @@ input[type="radio"] {
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
+    height: auto;
 }
 
 /**
@@ -314,8 +364,9 @@ input[type="number"]::-webkit-outer-spin-button {
  */
 
 input[type="search"] {
-  -webkit-appearance: textfield; /* 1 */ /* 2 */
-  box-sizing: content-box;
+    -webkit-appearance: textfield; /* 1 */
+    /* 2 */
+    box-sizing: content-box;
 }
 
 /**
@@ -326,7 +377,7 @@ input[type="search"] {
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 /**
@@ -334,9 +385,9 @@ input[type="search"]::-webkit-search-decoration {
  */
 
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
 }
 
 /**
@@ -345,8 +396,8 @@ fieldset {
  */
 
 legend {
-  border: 0; /* 1 */
-  padding: 0; /* 2 */
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
 }
 
 /**
@@ -354,7 +405,7 @@ legend {
  */
 
 textarea {
-  overflow: auto;
+    overflow: auto;
 }
 
 /**
@@ -363,7 +414,7 @@ textarea {
  */
 
 optgroup {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 /* Tables
@@ -374,30 +425,200 @@ optgroup {
  */
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 td,
 th {
-  padding: 0;
+    padding: 0;
 }
 
-#app{
-	height:100%;
+#app {
+    height: 100%;
 }
 
-a:focus{
-	outline:none;
+a:focus {
+    outline: none;
 }
-//
-//@import 'header';
-//@import 'navbar';
-//@import 'section';
-//@import 'footer';
-//@import 'pagination';
-//@import 'loading';
-//@import 'media';
-//@import 'comment';
-//@import 'tag';
-//@import "navigation";
+
+/*font-diao-fix*/
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-360yunpan:before,
+.icon-58:before,
+.icon-acer:before,
+.icon-alibaba:before,
+.icon-alipay:before,
+.icon-asus:before,
+.icon-baidu:before,
+.icon-baiduyun:before,
+.icon-cctv:before,
+.icon-clover:before,
+.icon-cnbeta:before,
+.icon-ctrip:before,
+.icon-dangdang:before,
+.icon-dazhong:before,
+.icon-dianping:before,
+.icon-dianxin:before,
+.icon-dongfangweishi:before,
+.icon-douban:before,
+.icon-fanfou:before,
+.icon-fangzheng:before,
+.icon-feixin:before,
+.icon-fenghuangweishi:before,
+.icon-ganji:before,
+.icon-gongshangyinhang:before,
+.icon-jd:before,
+.icon-jiansheyinhang:before,
+.icon-jiaotongyinhang:before,
+.icon-jijia:before,
+.icon-kingsoft:before,
+.icon-kuandaishan:before,
+.icon-kx001:before,
+.icon-letv:before,
+.icon-liantong:before,
+.icon-lianxiang:before,
+.icon-miliao:before,
+.icon-mop:before,
+.icon-pengyouquan:before,
+.icon-pps:before,
+.icon-qq:before,
+.icon-qqyinyue:before,
+.icon-qzone:before,
+.icon-renminyinhang:before,
+.icon-renren:before,
+.icon-shanghaidianshitai:before,
+.icon-shanghaiyinhang:before,
+.icon-taobao:before,
+.icon-tengxunweibo:before,
+.icon-tmall:before,
+.icon-tudou:before,
+.icon-v2ex:before,
+.icon-wangyi:before,
+.icon-wangyiweibo:before,
+.icon-wangyiyunyinyue:before,
+.icon-wechat:before,
+.icon-weibo:before,
+.icon-weifeng:before,
+.icon-xiami:before,
+.icon-xiaomi:before,
+.icon-xinyeyinhang:before,
+.icon-xunlei:before,
+.icon-yihaodian:before,
+.icon-yilong:before,
+.icon-yinlian:before,
+.icon-yixun:before,
+.icon-youdao:before,
+.icon-youku:before,
+.icon-youzhen:before,
+.icon-zhaoshangyinhang:before,
+.icon-zhenai:before,
+.icon-zheshangyinhang:before,
+.icon-zhihu:before,
+.icon-zhihu-square:before,
+.icon-zhongguoyinhang:before,
+.icon-zhongxinyinhang:before {
+    display: inline-block;
+    font-family: "fontdiao";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-decoration: inherit;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+.icon-360yunpan:before { content: "\f100"; }
+.icon-58:before { content: "\f101"; }
+.icon-acer:before { content: "\f102"; }
+.icon-alibaba:before { content: "\f103"; }
+.icon-alipay:before { content: "\f104"; }
+.icon-asus:before { content: "\f105"; }
+.icon-baidu:before { content: "\f106"; }
+.icon-baiduyun:before { content: "\f107"; }
+.icon-cctv:before { content: "\f108"; }
+.icon-clover:before { content: "\f109"; }
+.icon-cnbeta:before { content: "\f10a"; }
+.icon-ctrip:before { content: "\f10b"; }
+.icon-dangdang:before { content: "\f10c"; }
+.icon-dazhong:before { content: "\f10d"; }
+.icon-dianping:before { content: "\f10e"; }
+.icon-dianxin:before { content: "\f10f"; }
+.icon-dongfangweishi:before { content: "\f110"; }
+.icon-douban:before { content: "\f111"; }
+.icon-fanfou:before { content: "\f112"; }
+.icon-fangzheng:before { content: "\f113"; }
+.icon-feixin:before { content: "\f114"; }
+.icon-fenghuangweishi:before { content: "\f115"; }
+.icon-ganji:before { content: "\f116"; }
+.icon-gongshangyinhang:before { content: "\f117"; }
+.icon-jd:before { content: "\f118"; }
+.icon-jiansheyinhang:before { content: "\f119"; }
+.icon-jiaotongyinhang:before { content: "\f11a"; }
+.icon-jijia:before { content: "\f11b"; }
+.icon-kingsoft:before { content: "\f11c"; }
+.icon-kuandaishan:before { content: "\f11d"; }
+.icon-kx001:before { content: "\f11e"; }
+.icon-letv:before { content: "\f11f"; }
+.icon-liantong:before { content: "\f120"; }
+.icon-lianxiang:before { content: "\f121"; }
+.icon-miliao:before { content: "\f122"; }
+.icon-mop:before { content: "\f123"; }
+.icon-pengyouquan:before { content: "\f124"; }
+.icon-pps:before { content: "\f125"; }
+.icon-qq:before { content: "\f126"; }
+.icon-qqyinyue:before { content: "\f127"; }
+.icon-qzone:before { content: "\f128"; }
+.icon-renminyinhang:before { content: "\f129"; }
+.icon-renren:before { content: "\f12a"; }
+.icon-shanghaidianshitai:before { content: "\f12b"; }
+.icon-shanghaiyinhang:before { content: "\f12c"; }
+.icon-taobao:before { content: "\f12d"; }
+.icon-tengxunweibo:before { content: "\f12e"; }
+.icon-tmall:before { content: "\f12f"; }
+.icon-tudou:before { content: "\f130"; }
+.icon-v2ex:before { content: "\f131"; }
+.icon-wangyi:before { content: "\f132"; }
+.icon-wangyiweibo:before { content: "\f133"; }
+.icon-wangyiyunyinyue:before { content: "\f134"; }
+.icon-wechat:before { content: "\f135"; }
+.icon-weibo:before { content: "\f136"; }
+.icon-weifeng:before { content: "\f137"; }
+.icon-xiami:before { content: "\f138"; }
+.icon-xiaomi:before { content: "\f139"; }
+.icon-xinyeyinhang:before { content: "\f13a"; }
+.icon-xunlei:before { content: "\f13b"; }
+.icon-yihaodian:before { content: "\f13c"; }
+.icon-yilong:before { content: "\f13d"; }
+.icon-yinlian:before { content: "\f13e"; }
+.icon-yixun:before { content: "\f13f"; }
+.icon-youdao:before { content: "\f140"; }
+.icon-youku:before { content: "\f141"; }
+.icon-youzhen:before { content: "\f142"; }
+.icon-zhaoshangyinhang:before { content: "\f143"; }
+.icon-zhenai:before { content: "\f144"; }
+.icon-zheshangyinhang:before { content: "\f145"; }
+.icon-zhihu:before { content: "\f146"; }
+.icon-zhihu-square:before { content: "\f147"; }
+.icon-zhongguoyinhang:before { content: "\f148"; }
+.icon-zhongxinyinhang:before { content: "\f149"; }
+
+
+@import "index";
+@import 'header';
+@import 'navbar';
+@import 'section';
+@import 'footer';
+@import 'pagination';
+@import 'loading';
+@import 'media';
+@import 'comment';
+@import 'tag';
+@import "navigation";
