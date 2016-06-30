@@ -1,12 +1,12 @@
 {
-  "name": "hole",
+  "name": "voe",
   "version": "1.0.0",
-  "description": "just a ghostblog theme",
+  "description": "Another Ghost blog theme",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "beilunyang",
+  "author": "Vizards",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
