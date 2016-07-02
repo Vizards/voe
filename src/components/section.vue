@@ -52,9 +52,6 @@
 				</article>
 			</template>
 		</section>
-        <section>
-            <my-navigaition v-if="!identity"></my-navigaition>
-        </section>
 		<my-comment :post_info='post' v-if="!identity"></my-comment> 
 	</div>
 </template>
@@ -63,8 +60,7 @@
 	module.exports = {
 		props:['post','identity'],
 		components:{
-			'myComment':require('../components/comment.vue'),
-            'myNavigaition':require('../components/navigation.vue')
+			'myComment':require('../components/comment.vue')
         },
         data:function () {
         }

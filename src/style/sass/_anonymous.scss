@@ -1,0 +1,49 @@
+.rl-cmys-list {
+    font-size: 15px;
+    li {
+        opacity: 0;
+        -webkit-transition: opactiy 0.4s;
+        transition:opacity 0.4s
+    }
+}
+.rl-cmts-box {
+    position: relative;
+}
+
+.rl-cmts-box input, .rl-cmts-box textarea {
+    font-size: 14px;
+    padding: 2px 5px;
+    border: 1px solid #ccc;
+    height:70px;
+    width: 100%;
+}
+
+#rlCmtsSubmit {
+    position:absolute;
+    right:18px;
+    bottom:13px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    border:0 none;
+    font-size:14px;
+    color:#fff;
+    border-radius:3px;
+    outline:0 none;
+    background:#4183c4;
+    padding:0 6px;
+    min-width:66px;
+    height:30px;
+    line-height:30px;
+    -webkit-transition:box-shadow 0.3s;
+    transition:box-shadow 0.3s
+}
+#rlCmtsSubmit:hover {
+    box-shadow:rgba(0, 0, 0, 0.4) 0px 4px 8px 0px;
+}
+.rl-cmts-timestamp {
+    display:block;
+    font-size:12px;
+    color:#888;
+}
+.rl-cmts-user-name {
+    color:#4183c4;
+}

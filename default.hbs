@@ -30,34 +30,14 @@
 			<div class="main">
 				{{{ body }}}
 			</div>
-			<footer class="container-fluid">
-				<div class="row">
-					<div class="about-me col-sm-6">
-						<img src="{{@blog.logo}}" alt="avatar" title="don't touch me~">
-						<blockquote>
-							97年双鱼直男,在校学生,伪前端,非科班.<br>	爱好:追番,撸码,睡觉(～﹃～)~zZ......<br>
-							常用语言:javascript,NodeJS,中文,English
-						</blockquote>
-					</div>
-					<div class="col-sm-6">
-						<!-- 不知道放什么 -->
-					</div>
-				</div>
-				<div class="row">
-					<ul class="follow-me col-sm-6">
-						<li><a href="http://weibo.com/philomilan" target="_blank"><i class="fa fa-weibo"></i></a></li>
-						<li><a href="https://github.com/Vizards" target="_blank"><i class="fa fa-github"></i></a></li>
-						<li><a href="{{@blog.url}}/rss/"><i class="fa fa-rss" target="_blank"></i></a></li>
-					</ul>
-					<span class="copyright col-sm-6">
-                        <a href="http://www.miitbeian.gov.cn/">皖 ICP 备 16010497 号</a>
-                        <p>Copyright © 2016 <a href="https://vizards.cc">Varea</a> All Rights Reserved</p>
-                    </span>
-				</div>
+			<footer>
 			</footer>
 		</div>
         <script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
         <script src="//cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
+        <script src="//cdn.bootcss.com/crypto-js/3.1.2/components/core-min.js"></script>
+        <script src="//cdn.bootcss.com/crypto-js/3.1.2/components/sha1-min.js"></script>
+        <script src="//cdn.bootcss.com/clipboard.js/1.5.12/clipboard.min.js"></script>
         <script>
             var pages = {{pagination.pages}};
             var duoshuoQuery = {short_name:"varea"};

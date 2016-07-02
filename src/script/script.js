@@ -1,30 +1,3 @@
-$(function(){
-	var isShow = false,
-	    brand = $('.brand'),
-	    head = $('header'),
-	    navbar = $('.navbar');
-
-	$('.more').on('click',function(){
-		if(isShow){
-			navbar.animate({'height':0,'opacity':1},'fast');
-			return isShow = false;
-		}
-
-		navbar.css({'display':'block'});
-		navbar.animate({'height':'75px','opacity':1},'fast');
-		isShow = true;
-	});
-
-	$(window).on('scroll',function(){
-		if($(this).scrollTop()>80){
-			brand.addClass('scroll');
-			navbar.css('display','block')
-				  .animate({'opacity':1},1000);
-			$(this).off('scroll');
-		}
-	});
-});
-
 function addSpace() {
     var is_spacing = false;
 
@@ -50,121 +23,125 @@ function addSpace() {
         }
     }, false);
 }
+
 addSpace();
-var $section = $("<section id='gradient'></section>");
-$("body").append($section);
-var $div = $("<div class='content-home text-center'>" +
-    "<a class='avatar' id='entrance'>" +
+
+
+(function() {
+    var $section = $("<section id='gradient'></section>");
+    $("body").append($section);
+    var $div = $("<div class='content-home text-center'>" +
+        "<a class='avatar' id='entrance'>" +
         "<img src='assets/logo.jpg' alt='avatar'>" +
-    "</a>" +
-    "<h1 class='name'>Vizards</h1>" +
-    "<div class='slogan'>愿有岁月可回首，且以深情共白头</div>" +
-    "<hr>" +
-    "<ul class='text-center nav'>" +
+        "</a>" +
+        "<h1 class='name'>Vizards</h1>" +
+        "<div class='slogan'>愿有岁月可回首，且以深情共白头</div>" +
+        "<hr>" +
+        "<ul class='text-center nav'>" +
         "<li class='item'>" +
-            "<a href='http://wpa.qq.com/msgrd?v=3&uin=1429005143&site=qq&menu=yes' target='_blank'><i class='fa fa-qq' aria-hidden='true'></i></a>" +
+        "<a href='http://wpa.qq.com/msgrd?v=3&uin=1429005143&site=qq&menu=yes' target='_blank'><i class='fa fa-qq' aria-hidden='true'></i></a>" +
         "</li>" +
         "<li class='item'>" +
-            "<a href=''><i class='fa fa-weixin' aria-hidden='true'></i></a>" +
+        "<a href=''><i class='fa fa-weixin' aria-hidden='true'></i></a>" +
         "</li>" +
         "<li class='item'>" +
-            "<a href='mailto:vizards@front.dog'><i class='fa fa-envelope' aria-hidden='true'></i></a>" +
+        "<a href='mailto:vizards@front.dog'><i class='fa fa-envelope' aria-hidden='true'></i></a>" +
         "</li>" +
         "<li class='item'>" +
-            "<a href='https://github.com/Vizards' target='_blank'><i class='fa fa-github' aria-hidden='true'></i></a>" +
+        "<a href='https://github.com/Vizards' target='_blank'><i class='fa fa-github' aria-hidden='true'></i></a>" +
         "</li>" +
         "<li class='item'>" +
-            "<a href='https://www.v2ex.com/member/vizards' target='_blank'><i class='icon-v2ex'></i></a>" +
+        "<a href='https://www.v2ex.com/member/vizards' target='_blank'><i class='icon-v2ex'></i></a>" +
         "</li>" +
         "<li class='item'>" +
-            "<a href='https://www.zhihu.com/people/Varea' target='_blank'><i class='icon-zhihu-square'></i></a>" +
+        "<a href='https://www.zhihu.com/people/Varea' target='_blank'><i class='icon-zhihu-square'></i></a>" +
         "</li>" +
         "<li class='item'>" +
-            "<a href='http://music.163.com/#/user/home?id=46347231' target='_blank'><i class='icon-wangyiyunyinyue'></i></a>" +
+        "<a href='http://music.163.com/#/user/home?id=46347231' target='_blank'><i class='icon-wangyiyunyinyue'></i></a>" +
         "</li>" +
         "<li class='item'>" +
-            "<a href='https://twitter.com/Philomilan' target='_blank'><i class='fa fa-twitter' aria-hidden='true'></i></a>" +
+        "<a href='https://twitter.com/Philomilan' target='_blank'><i class='fa fa-twitter' aria-hidden='true'></i></a>" +
         "</li>" +
         "<li class='item'>" +
-            "<a href='https://weibo.com/Philomilan' target='_blank'><i class='fa fa-weibo' aria-hidden='true'></i></a>" +
+        "<a href='https://weibo.com/Philomilan' target='_blank'><i class='fa fa-weibo' aria-hidden='true'></i></a>" +
         "</li>" +
         "<li class='item'>" +
-            "<a href='https://www.pinterest.com/gvizards/' target='_blank'><i class='fa fa-pinterest-p' aria-hidden='true'></i></a>" +
+        "<a href='https://www.pinterest.com/gvizards/' target='_blank'><i class='fa fa-pinterest-p' aria-hidden='true'></i></a>" +
         "</li>" +
         "<li class='item'>" +
-            "<a href='/rss/' target='_blank'><i class='fa fa-rss' aria-hidden='true'></i></a>" +
+        "<a href='/rss/' target='_blank'><i class='fa fa-rss' aria-hidden='true'></i></a>" +
         "</li>" +
-    "</ul>" +
-    "</div>");
-$("section").append($div);
-$("section").css("height",$(window).height());
-$('body').css("overflow","hidden");
-$(function(){
-    $('#entrance').click(function(){
-        $("#gradient").fadeOut();
-        $('body').css("overflow","auto");
+        "</ul>" +
+        "</div>");
+    $("section").append($div);
+    $("section").css("height", $(window).height());
+    $('body').css("overflow", "hidden");
+    $(function () {
+        $('#entrance').click(function () {
+            $("#gradient").fadeOut();
+            $('body').css("overflow", "auto");
+        });
     });
-});
-if (window.location.hash !== '#!/' && window.location.hash !== '') {
-    $("#gradient").css('display','none');
-    $('body').css("overflow","auto");
-} else {
-    $("#gradient").css('display','block');
-    $('body').css("overflow","hidden");
-}
+    if (window.location.hash !== '#!/' && window.location.hash !== '') {
+        $("#gradient").remove();
+        $('body').css("overflow", "auto");
+    } else {
+        $("#gradient").css('display', 'block');
+        $('body').css("overflow", "hidden");
+    }
 
-var colors = new Array([32,15,155], [30,125,30], [125,18,48], [22,95,115], [125,0,125], [125,64,0]);
+    var colors = new Array([22, 95, 115], [32, 15, 155], [30, 125, 30], [125, 18, 48], [125, 0, 125], [125, 64, 0]);
 
-var step = 0;
-//color table indices for:
-// current color left
-// next color left
-// current color right
-// next color right
-var colorIndices = [0,1,2,3];
+    var step = 0;
+    //color table indices for:
+    // current color left
+    // next color left
+    // current color right
+    // next color right
+    var colorIndices = [0, 1, 2, 3];
 
-//transition speed
-var gradientSpeed = 0.002;
+    //transition speed
+    var gradientSpeed = 0.002;
 
-function updateGradient()
-{
+    function updateGradient() {
 
-	if ( $===undefined ) return;
+        if ($ === undefined) return;
 
-	var c0_0 = colors[colorIndices[0]];
-	var c0_1 = colors[colorIndices[1]];
-	var c1_0 = colors[colorIndices[2]];
-	var c1_1 = colors[colorIndices[3]];
+        var c0_0 = colors[colorIndices[0]];
+        var c0_1 = colors[colorIndices[1]];
+        var c1_0 = colors[colorIndices[2]];
+        var c1_1 = colors[colorIndices[3]];
 
-	var istep = 1 - step;
-	var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
-	var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
-	var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
-	var color1 = "rgb("+r1+","+g1+","+b1+")";
+        var istep = 1 - step;
+        var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+        var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+        var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+        var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
 
-	var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
-	var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
-	var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
-	var color2 = "rgb("+r2+","+g2+","+b2+")";
+        var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+        var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+        var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+        var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
 
-	$('#gradient').css({
-		background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
-		background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+        $('#gradient').css({
+            background: "-webkit-gradient(linear, left top, right top, from(" + color1 + "), to(" + color2 + "))"
+        }).css({
+            background: "-moz-linear-gradient(left, " + color1 + " 0%, " + color2 + " 100%)"
+        });
 
-	step += gradientSpeed;
-	if ( step >= 1 )
-	{
-		step %= 1;
-		colorIndices[0] = colorIndices[1];
-		colorIndices[2] = colorIndices[3];
+        step += gradientSpeed;
+        if (step >= 1) {
+            step %= 1;
+            colorIndices[0] = colorIndices[1];
+            colorIndices[2] = colorIndices[3];
 
-		//pick two new target color indices
-		//do not pick the same as the current one
-		colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-		colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+            //pick two new target color indices
+            //do not pick the same as the current one
+            colorIndices[1] = ( colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+            colorIndices[3] = ( colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
 
-	}
-}
+        }
+    }
 
-setInterval(updateGradient,10);
-
+    setInterval(updateGradient, 10);
+})();
