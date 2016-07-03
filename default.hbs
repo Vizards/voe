@@ -1,60 +1,117 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-	<head>
-		<meta charset="utf-8">
-		<meta name="renderer" content="webkit">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta http-equiv="Cache-Control" content="no-siteapp">
-		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-		<meta name="description" content="{{meta_description}}">
-		<title>{{meta_title}}</title>
-		<link rel="shortcut icon" href="{{asset '/favicon.ico'}}" type="image/x-icon">
-        <link href="//cdn.bootcss.com/highlight.js/9.4.0/styles/monokai-sublime.min.css" rel="stylesheet">        <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{asset 'b.css'}}">
-        {{ghost_head}}
-	</head>
-	<body>
-		<div id="app">
-			<header>
-                <a href="/">{{@blog.title}}</a>
-					<p>愿有岁月可回首，且以深情共白头</p>
-				<div class="res">
-					<div class="s-brand">
-						<img src="{{@blog.logo}}" alt="brand" height='50'>
-					</div>
-					<a class="fa fa-navicon fa-lg more"></a>
-				</div>
-				{{navigation}}
-			</header>
-			<div class="main">
-				{{{ body }}}
-			</div>
-			<footer>
-			</footer>
-		</div>
-        <script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
-        <script src="//cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
-        <script src="//cdn.bootcss.com/crypto-js/3.1.2/components/core-min.js"></script>
-        <script src="//cdn.bootcss.com/crypto-js/3.1.2/components/sha1-min.js"></script>
-        <script src="//cdn.bootcss.com/clipboard.js/1.5.12/clipboard.min.js"></script>
-        <script>
-            var pages = {{pagination.pages}};
-            var duoshuoQuery = {short_name:"varea"};
-            $(document).ready(function(){ findLink(); });
-            function findLink(){
-                var self =null;
-                var timer = setTimeout(findLink,200);
-                $('link[rel*=stylesheet]').each(function(i){
-                    var hrefStr = $(this).attr("href");
-                    if(hrefStr.indexOf('styles/embed')> 0){
-                        self = $(this);
-                        self.remove();
-                        clearTimeout(timer);
-                    }
-                });
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="description" content="{{meta_description}}">
+    <title>{{meta_title}}</title>
+    <link href="//cdn.bootcss.com/highlight.js/9.5.0/styles/xcode.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset 'b.css'}}">
+    {{ghost_head}}
+</head>
+<body>
+<nav>
+    <a><i class="fa fa-home"></i></a>
+    {{navigation}}
+</nav>
+<div id="app">
+    <header>
+        <a href="/#!/aboutme" class="avatar">
+            <span>愿有岁月可回首</span>
+            <img src="assets/logo.jpg" alt="avatar">
+            <span>且以深情共白头</span>
+        </a>
+    </header>
+    <main>
+        {{{ body }}}
+    </main>
+    <footer>
+        <hr>
+        <p>2015 - 2016 Vizards Powered By Ghost & Vue.js</p>
+    </footer>
+</div>
+<aside>
+    <a><i class="fa fa-link"></i></a>
+    <ul>
+        <li>
+            <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1429005143&amp;site=qq&amp;menu=yes" target="_blank">
+                <i class="fa fa-qq" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="item">
+            <a href="mailto:vizards@front.dog">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="item">
+            <a href="https://github.com/Vizards" target="_blank">
+                <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="item">
+            <a href="https://www.v2ex.com/member/vizards" target="_blank">
+                <i class="icon-v2ex"></i>
+            </a>
+        </li>
+        <li class="item">
+            <a href="https://www.zhihu.com/people/Varea" target="_blank">
+                <i class="icon-zhihu-square"></i>
+            </a>
+        </li>
+        <li class="item">
+            <a href="http://music.163.com/#/user/home?id=46347231" target="_blank">
+                <i class="icon-wangyiyunyinyue"></i>
+            </a>
+        </li>
+        <li class="item">
+            <a href="https://twitter.com/Philomilan" target="_blank">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="item">
+            <a href="https://weibo.com/Philomilan" target="_blank">
+                <i class="fa fa-weibo" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="item">
+            <a href="https://www.pinterest.com/gvizards/" target="_blank">
+                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="item">
+            <a href="/rss/" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</aside>
+<script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/crypto-js/3.1.2/components/core-min.js"></script>
+<script src="//cdn.bootcss.com/crypto-js/3.1.2/components/sha1-min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.12/clipboard.min.js"></script>
+<script>
+    var pages = {{pagination.pages}};
+    var duoshuoQuery = {short_name: "varea"};
+    $(document).ready(function () {
+        findLink();
+    });
+    function findLink() {
+        var self = null;
+        var timer = setTimeout(findLink, 200);
+        $('link[rel*=stylesheet]').each(function (i) {
+            var hrefStr = $(this).attr("href");
+            if (hrefStr.indexOf('styles/embed') > 0) {
+                self = $(this);
+                self.remove();
+                clearTimeout(timer);
             }
-        </script>
-        <script type="text/javascript" src="{{asset 'b.js'}}"></script>
-	</body>
+        });
+    }
+</script>
+<script type="text/javascript" src="{{asset 'b.js'}}"></script>
+</body>
 </html>

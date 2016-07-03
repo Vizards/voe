@@ -1,7 +1,5 @@
-<nav class="navbar">
-	<ul>
-		{{#foreach navigation}}
-			<li><a href="{{ url absolute='true' }}">{{ label }}</a></li>
-		{{/foreach}}
-	</ul>
-</nav>
+<ul>
+    {{#foreach navigation}}
+        <li><a href="{{ url absolute='true' }}">{{ label }}</a></li>
+    {{/foreach}}
+</ul>

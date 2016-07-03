@@ -21,7 +21,7 @@
 		route:{
 			data:function(transition){
 				var tmp_id = transition.to.params.id;
-				$.get(ghost.url.api('tags/' + tmp_id,{fields:'id,name'}))
+				$.get(ghost.url.api('tags/' + tmp_id,{fields:'id,name,meta_description'}))
 					.done(function(data){
 						transition.next({tags:data.tags});
 					})

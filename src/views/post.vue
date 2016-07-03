@@ -9,7 +9,7 @@
 			return{
 				post_content:'',
 				showload:true
-			}
+            }
 		},
 		components:{
 			mySection: require('../components/section.vue'),
@@ -17,16 +17,16 @@
 		},
 		route:{
 			data:function(transition){
-				var tmp_id = transition.to.params.id?transition.to.params.id:1;
+				var tmp_id = transition.to.params.slug;
 				//limit 大小应该与你后台设置的每页显示文章数一致
-				$.get(ghost.url.api('posts/'+tmp_id,{fields:'title,html,created_at',limit:'20',page:tmp_id}))
+				$.get(ghost.url.api('posts/slug/'+tmp_id,{fields:'title,html,created_at,slug,url,image',limit:'5',page:tmp_id}))
 					.done(function(data){
-					    transition.next({post_content:data.posts[0],showload:false});
-					})
+					    transition.next({post_content:data.posts[0],post_share:'分享 《' + data.posts[0].title + "》, 来自 巴别塔 - Vizards 的博客" ,showload:false});
+                    })
 					.fail(function(err){
 						console.log(err);
 					});
-
+				$('header').css('visibility','hidden');
             }
 		}
 	}

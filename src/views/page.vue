@@ -22,13 +22,17 @@
 			data:function(transition){
 				var tmp_id = transition.to.params.id?transition.to.params.id:1;
 				//limit 大小应该与你后台设置的每页显示文章数一致
-				$.get(ghost.url.api('posts',{fields:'title,image,id,meta_description,created_at,slug,url',limit:'20',page:tmp_id,include:'tags'}))
+				$.get(ghost.url.api('posts',{fields:'title,image,id,meta_description,created_at,slug,url,html',limit:'5',page:tmp_id,include:'tags'}))
 					.done(function(data){
 						transition.next({pid:parseInt(tmp_id,10),posts:data.posts,showload:false});
 					})
 					.fail(function(err){
 						console.log(err);
 					});
+				$('header').css('visibility','visible');
+			},
+			deactivate: function () {
+				$('header').css('visibility','hidden');
 			}
 		}
 	}

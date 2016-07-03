@@ -1,5 +1,7 @@
 <template>
 </template>
+<style>
+</style>
 <script>
     module.exports = {
         route: {
@@ -19,7 +21,7 @@
                 window.RLComments = {
                     pageId: null,
                     dataRef: null,
-                    container: document.getElementsByClassName('main')[0],
+                    container: document.getElementsByTagName('main')[0],
                     comments: {},
                     list: null,
                     init: function (id, container) {
@@ -86,8 +88,7 @@
 
                         this.container.appendChild(box);
 
-                        var usernameInput = document.getElementById('rlCmtsInputUsername'),
-                                contentInput = document.getElementById('rlCmtsInputContent'),
+                        var contentInput = document.getElementById('rlCmtsInputContent'),
                                 submitBtn = document.getElementById('rlCmtsSubmit');
 
                         submitBtn.addEventListener('click', function () {
@@ -99,11 +100,9 @@
                                 return alert('评论内容不能为空');
                             }
                             self.dataRef.push({
-                                username: userName,
                                 content: content,
                                 time: Date.now()
                             });
-                            localStorage.username = userName;
                             contentInput.value = '';
                         });
                     }
@@ -113,6 +112,7 @@
                     var container = document.getElementById('comments');
                     RLComments.init(id, container);
                 })();
+                $('header').css('visibility','hidden');
             },
             deactivate: function () {
                 $('.rl-cmts-list').remove();

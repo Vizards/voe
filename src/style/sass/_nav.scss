@@ -1,0 +1,92 @@
+nav {
+    padding: 30px 0 0 30px;
+    &:hover {
+        ul {
+            display: block;
+            li {
+                animation-duration: .8s;
+
+                animation-fill-mode: both;
+            }
+            li:nth-child(1){
+                // animation-name: zoomIn;
+                animation-name: fadeIn;
+            }
+            li:nth-child(2){
+                // animation-name: zoomIn;
+                animation-name: fadeIn;
+                animation-delay: .1s;
+            }
+            li:nth-child(3){
+                // animation-name: zoomIn;
+                animation-name: fadeIn;
+                animation-delay: .2s;
+            }
+            li:nth-child(4){
+                // animation-name: zoomIn;
+                animation-name: fadeIn;
+                animation-delay: .3s;
+            }
+            li:nth-child(5){
+                // animation-name: zoomIn;
+                animation-name: fadeIn;
+                animation-delay: .4s;
+            }
+            li:nth-child(6){
+                // animation-name: zoomIn;
+                animation-name: fadeIn;
+                animation-delay: .5s;
+            }
+            li:nth-child(7){
+                // animation-name: zoomIn;
+                animation-name: fadeIn;
+                animation-delay: .6s;
+            }
+            li:nth-child(8){
+                // animation-name: zoomIn;
+                animation-name: fadeIn;
+                animation-delay: .7s;
+            }
+        }
+    }
+    a {
+        cursor: pointer;
+        line-height: 55px;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        background-color: #f0f0f0;
+        display: block;
+        color: rgb(79, 192, 141);
+        i:before {
+            font-size: 24px;
+            text-align: center;
+        }
+        transition-duration: 0.5s;
+        transition-propety: background-color;
+        &:hover {
+            background-color: rgb(79, 192, 141);
+            color: #f0f0f0;
+        }
+    }
+    ul {
+        display: none;
+        padding: 0;
+        li {
+            list-style: none;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border-radius: 50%;
+            background: #f0f0f0;
+            margin: 10px 0 10px 0;
+            a {
+                vertical-align: middle;
+                line-height: 50px;
+                font-size: 14px;
+            }
+        }
+    }
+}

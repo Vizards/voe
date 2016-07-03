@@ -1,42 +1,45 @@
 <template>
     <loading v-if="showload"></loading>
-    <div id="DonateText" class="tr3">Donate</div>
-    <ul id="donateBox" class="list pos-f tr3">
-        <li id="PayPal">PayPal</li>
-        <li id="BTC" data-footnote="Copy addres and show QRCod"><button id="BTCBn"  data-clipboard-target="#btc-key" alt="Copy to clipboard">Bitcoin</button></li>
-        <li id="AliPay">AliPay</li>
-        <li id="WeChat">WeChat</li>
-    </ul>
-    <div id="QRBox" class="pos-f left-100">
-        <div id="MainBox"></div>
+    <div class="donate-page">
+        <div id="DonateText" class="tr3">Donate</div>
+        <ul id="donateBox" class="list pos-f tr3">
+            <li id="PayPal">PayPal</li>
+            <li id="BTC" data-footnote="Copy addres and show QRCod"><button id="BTCBn"  data-clipboard-target="#btc-key" alt="Copy to clipboard">Bitcoin</button></li>
+            <li id="AliPay">AliPay</li>
+            <li id="WeChat">WeChat</li>
+        </ul>
+        <div id="QRBox" class="pos-f left-100">
+            <div id="MainBox"></div>
+        </div>
+        <!-- Bitcoin 账号 -->
+        <input id="btc-key" type="text" value="1LVPGPkJxndGJe4KzeY9afLRdSeeSPnW5E" readonly="readonly">
+
     </div>
-    <!-- Bitcoin 账号 -->
-    <input id="btc-key" type="text" value="1LVPGPkJxndGJe4KzeY9afLRdSeeSPnW5E" readonly="readonly">
 </template>
 <script>
     module.exports = {
-        route:{
-            data:(function () {
-                // 获取链接地址 GET 参数
-                String.prototype.getQuery = function(name) {
-                    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-                    var r = this.substr(this.indexOf("\?")+1).match(reg);
-                    if (r!=null) return unescape(r[2]); return null;
+        route: {
+            data: function () {
+                String.prototype.getQuery = function (name) {
+                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                    var r = this.substr(this.indexOf("\?") + 1).match(reg);
+                    if (r != null) return unescape(r[2]);
+                    return null;
                 };
-                var strHref = location.href.substring(location.href.indexOf("?")+1);
-                var ppitem_name		= strHref.getQuery('item');	//项目名称
-                var donatrNo	=	strHref.getQuery('price');	//金额
-
-                jQuery(document).ready(function() {
-                    // 获取链接地址 GET 参数
-                    String.prototype.getQuery = function(name) {
-                        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-                        var r = this.substr(this.indexOf("\?")+1).match(reg);
-                        if (r!=null) return unescape(r[2]); return null;
+                var strHref = location.href.substring(location.href.indexOf("?") + 1);
+                var ppitem_name = strHref.getQuery('item');	//项目名称
+                var donatrNo = strHref.getQuery('price');	//金额
+                window.onload = function () {
+                    String.prototype.getQuery = function (name) {
+                        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                        var r = this.substr(this.indexOf("\?") + 1).match(reg);
+                        if (r != null) return unescape(r[2]);
+                        return null;
                     };
-                    var strHref = location.href.substring(location.href.indexOf("?")+1);
-                    var ppitem_name		= strHref.getQuery('item');	//项目名称
-                    var donatrNo	=	strHref.getQuery('price');	//金额
+                    var strHref = location.href.substring(location.href.indexOf("?") + 1);
+                    var ppitem_name = strHref.getQuery('item');	//项目名称
+                    var donatrNo = strHref.getQuery('price');	//金额
+
                     var QRBox	=	$('#QRBox');
                     var MainBox	=	$('#MainBox');
                     var BTCQR	=	'https://ooo.0o0.ooo/2016/06/10/575a67475de45.png';	// 二维码路径
@@ -50,61 +53,6 @@
                     // if (!donatrNo) { donatrNo	=	1; }
 
                     //创建 Paypal 表单
-
-                    // 捐赠方式，仅适用于国外账户!
-                    function ppDonate() {
-                        var tempForm	=	document.createElement("form");
-                        tempForm.id	=	"paypal";
-                        tempForm.method	=	"post";
-                        tempForm.action	=	"https://www.paypal.com/cgi-bin/webscr";
-                        tempForm.target	=	"paypal";
-
-                        var cmd	=	document.createElement("input");
-                        cmd.type	=	"hidden";
-                        cmd.name	=	"cmd";
-                        cmd.value	=	"_donations";
-                        tempForm.appendChild(cmd);
-
-                        var business	=	document.createElement("input");
-                        business.type	=	"hidden";
-                        business.name	=	"business";
-                        business.value	=	ppbusiness;
-                        tempForm.appendChild(business);
-
-                        var lc	=	document.createElement("input");
-                        lc.type	=	"hidden";
-                        lc.name	=	"lc";
-                        lc.value	=	"US";
-                        tempForm.appendChild(lc);
-
-                        var item_name	=	document.createElement("input");
-                        item_name.type	=	"hidden";
-                        item_name.name	=	"item_name";
-                        item_name.value	=	ppitem_name;
-                        tempForm.appendChild(item_name);
-
-                        var no_note	=	document.createElement("input");
-                        no_note.type	=	"hidden";
-                        no_note.name	=	"no_note";
-                        no_note.value	=	"0";
-                        tempForm.appendChild(no_note);
-
-                        var currency_code	=	document.createElement("input");
-                        currency_code.type	=	"hidden";
-                        currency_code.name	=	"currency_code";
-                        currency_code.value	=	"USD";
-                        tempForm.appendChild(currency_code);
-
-                        var bn	=	document.createElement("input");
-                        bn.type	=	"hidden";
-                        bn.name	=	"bn";
-                        bn.value	=	"PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest";
-                        tempForm.appendChild(bn);
-
-                        document.body.appendChild(tempForm);
-                        tempForm.submit();
-                        document.body.removeChild(tempForm);
-                    }
 
                     // 立即购买，适用于中国账户
                     function ppBuy() {
@@ -171,7 +119,7 @@
                         if (QR) {
                             MainBox.css('background-image','url('+QR+')');
                         }
-                        $('#DonateText,#donateBox,#github,header,.article-info,.markdown-body,.navigation,.comment,footer').addClass('blur');
+                        $('nav','footer','header','aside').addClass('blur');
                         QRBox.fadeIn(300,function(argument) {
                             MainBox.addClass('showQR');
                         });
@@ -202,12 +150,13 @@
                             QRBox.fadeOut(300,function(argument) {
                                 MainBox.removeClass('hideQR');
                             });
-                            $('#DonateText,#donateBox,#github,header,.article-info,.markdown-body,.navigation,.comment,footer').removeClass('blur');
+                            $('nav','footer','header','aside').removeClass('blur');
                         },600);
 
                     });
-                });
-            })
+                }
+
+            }
         }
-    }
+    };
 </script>
