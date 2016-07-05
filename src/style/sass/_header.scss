@@ -1,15 +1,5 @@
-body {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    #app {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
 header {
-    margin: 0 auto;
+    text-align: center;
     padding-top: 30px;
     a {
         img {
@@ -37,5 +27,4 @@ header {
             margin: 0 20px 0 20px;
         }
     }
-
 }

@@ -45,6 +45,8 @@
         padding: 1px 10px 1px 20px;
         border-left: 4px solid rgb(65,184,131);
         background-color: rgba(66, 185, 131, 0.1);
+        word-wrap: break-word;
+        word-break: normal;
     }
     img {
         display: block;
@@ -64,7 +66,6 @@
         display: block;
         width: 100%;
         overflow: auto;
-        word-break: normal;
         word-break: keep-all;
         th {
             font-weight: bold;

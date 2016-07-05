@@ -30,10 +30,15 @@
 				<article class="markdown-body">
                     {{{post.html}}}
 				</article>
-
-
-                <div class="social-share" data-source=" Vagabund - Vizards's Blog " data-title={{post.title}} data-description={{post.meta_description}} data-image={{post.image}}></div>
-            </template>
+                <div class="share">
+                    <div>
+                        <span class="social-text">😳 觉得本文不错?</span>
+                        <i class="fa fa-share-alt"></i>
+                        <span class="social-text">安利给你的朋♂友吧</span>
+                    </div>
+                    <span class="social-share" data-source=" Vagabund - Vizards's Blog " data-title={{post.title}} data-description={{post.meta_description}} data-image={{post.image}}></span>
+                </div>
+                </template>
 		</section>
 		<my-comment :post_info='post' v-if="!identity"></my-comment> 
 	</div>

@@ -30,7 +30,7 @@
 						console.log(err);
 					});
 				$('header').css('visibility','visible');
-			},
+            },
 			deactivate: function () {
 				$('header').css('visibility','hidden');
 			}

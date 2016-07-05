@@ -14,11 +14,11 @@ function checkMobile() {
 //管理员判断开始
 function sskadmin(e) {
     var ssk = '';
-    if (e.user_id == 13232586) {
+    if (e.user_id == 13326965) {
         if (checkMobile()) {
-            ssk = '<span class="ua"><span class="sskadmin">博主</span></span><br><br>';
+            ssk = '<span class="ua"><span class="sskadmin"><i class="fa fa-user"></i></span></span><br><br>';
         } else {
-            ssk = '<span class="ua"><span class="sskadmin">博主</span></span>';
+            ssk = '<span class="ua"><span class="sskadmin"><i class="fa fa-user"></i></span></span>';
         }
     } else {
         if (checkMobile()) {
@@ -2020,4 +2020,6 @@ function os(e) {
             })
 })(window, document);
 
+// HACK 内容 开始
+// document.getElementsByClassName('ds-post-reply')[0].innnerHTML = "<span class='fa fa-reply'></span>";
 //自定义表情文件开始

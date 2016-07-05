@@ -9,32 +9,30 @@
     <meta name="description" content="{{meta_description}}">
     <title>{{meta_title}}</title>
     <link href="//cdn.bootcss.com/highlight.js/9.5.0/styles/xcode.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/black/pace-theme-flat-top.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset 'b.css'}}">
     {{ghost_head}}
 </head>
 <body>
-<nav>
+<div class="body">
+    <nav>
     <a><i class="fa fa-home"></i></a>
     {{navigation}}
 </nav>
-<div id="app">
-    <header>
-        <a href="/#!/aboutme" class="avatar">
-            <span>愿有岁月可回首</span>
-            <img src="assets/logo.jpg" alt="avatar">
-            <span>且以深情共白头</span>
-        </a>
-    </header>
-    <main>
+    <div id="app">
+        <header>
+                <a href="/#!/aboutme" class="avatar">
+                <span>愿有岁月可回首</span>
+                <img src="assets/logo.jpg" alt="avatar">
+                <span>且以深情共白头</span>
+            </a>
+        </header>
+        <main>
         {{{ body }}}
-    </main>
-    <footer>
-        <hr>
-        <p>2015 - 2016 Vizards Powered By Ghost & Vue.js</p>
-    </footer>
-</div>
-<aside>
+        </main>
+    </div>
+    <aside>
     <a><i class="fa fa-link"></i></a>
     <ul>
         <li>
@@ -88,6 +86,11 @@
         </li>
     </ul>
 </aside>
+</div>
+<footer>
+    <hr>
+    <p>2015 - 2016 Vizards Powered By Ghost & Vue.js</p>
+</footer>
 <script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
 <script src="//cdn.bootcss.com/crypto-js/3.1.2/components/core-min.js"></script>

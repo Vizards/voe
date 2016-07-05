@@ -1,12 +1,11 @@
 var Vue = require('vue'),
-	Router = require('vue-router');
+	Router = require('vue-router'),
     trimHtml = require('trim-html');
 
-require('./style/duosuo.css');
 require('./style/sass/entry.scss');
 require('./script/script.js');
 require('./script/embed.js');
-require('./script/social-share.min.js');
+require('./script/emoji.js');
 
 Vue.use(Router);
 
@@ -60,7 +59,7 @@ Vue.directive('f-time',function(value){
 });
 
 Vue.directive('f-html',function(value){
-    var html = trimHtml(value, { limit: 600 });
+    var html = trimHtml(value, { limit: 300 });
     this.el.innerHTML = html.html;
     if (html.more == true) {
         this.el.innerHTML = html.html + '<br>' +'<a>...更多</a>';
@@ -108,6 +107,8 @@ Vue.directive('show-comment',{
                         inserted_go_spacing(e.target);
                     }
                 }, false);
+
+                $('.share').emoji();
             });
         }
     }
