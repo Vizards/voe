@@ -250,32 +250,26 @@ function os(e) {
                 mzadxN: "http://js.miaozhen.com/mz_ad_serving.js"
             },
             sourceName: {
-                weibo: "\u65b0\u6d6a\u5fae\u535a",
-                qq: "QQ",
-                qzone: "QQ\u7a7a\u95f4",
-                qqt: "\u817e\u8baf\u5fae\u535a",
-                renren: "\u4eba\u4eba\u7f51",
-                douban: "\u8c46\u74e3\u7f51",
-                netease: "\u7f51\u6613\u5fae\u535a",
-                kaixin: "\u5f00\u5fc3\u7f51",
-                sohu: "\u641c\u72d0\u5fae\u535a",
-                baidu: "\u767e\u5ea6",
-                taobao: "\u6dd8\u5b9d",
-                msn: "MSN",
-                google: "\u8c37\u6b4c"
+                weibo: "<i class='icon-weibo'></i>",
+                qq: "<i class='icon-qq'></i>",
+                douban: "<i class='icon-douban'></i>",
+                renren: "<i class='icon-renren'></i>",
+                netease: "<i class='icon-wangyi'></i>",
+                kaixin: "<i class='icon-kx001'></i>",
+                sohu: "",
+                baidu: "<i class='icon-baidu'></i>",
+                google: "<i class='icon-google'></i>"
             },
             serviceNames: {
-                weibo: "\u5fae\u535a",
-                qq: "QQ",
-                douban: "\u8c46\u74e3",
-                renren: "\u4eba\u4eba",
-                netease: "\u7f51\u6613",
-                kaixin: "\u5f00\u5fc3",
-                sohu: "\u641c\u72d0",
-                baidu: "\u767e\u5ea6",
-                taobao: "\u6dd8\u5b9d",
-                msn: "MSN",
-                google: "\u8c37\u6b4c"
+                weibo: "<i class='icon-weibo'></i>",
+                qq: "<i class='icon-qq'></i>",
+                douban: "<i class='icon-douban'></i>",
+                renren: "<i class='icon-renren'></i>",
+                netease: "<i class='icon-wangyi'></i>",
+                kaixin: "<i class='icon-kx001'></i>",
+                sohu: "",
+                baidu: "<i class='icon-baidu'></i>",
+                google: "<i class='icon-google'></i>"
             },
             parseDate: function(e) {
                 return e.parse("2011-10-28T00:00:00+08:00") &&
@@ -522,7 +516,7 @@ function os(e) {
             hottest: "\u6700\u70ed",
             share_to: "\u5206\u4eab\u5230:",
             leave_a_message: "\u8bf4\u70b9\u4ec0\u4e48\u5427\u2026",
-            no_comments_yet: "\u8fd8\u6ca1\u6709\u8bc4\u8bba\uff0c\u6c99\u53d1\u7b49\u4f60\u6765\u62a2",
+            no_comments_yet: "",
             repost_reason: "\u8bf7\u8f93\u5165\u8f6c\u53d1\u7406\u7531",
             hot_posts_title: "\u88ab\u9876\u8d77\u6765\u7684\u8bc4\u8bba",
             comments_zero: "\u6682\u65e0\u8bc4\u8bba",
@@ -588,7 +582,7 @@ function os(e) {
         B = w.Callbacks = {},
         j = w.openDialog = function(e) {
             return w.dialog !== n && w.dialog.el.remove(),
-                w.dialog = (new H.Dialog('<div class="ds-dialog"><div class="ds-dialog-inner ds-rounded"><div class="ds-dialog-body">' + e + '</div><div class="ds-dialog-footer"><a href="http://duoshuo.com/" target="_blank" class="ds-logo"></a><span>\u793e\u4f1a\u5316\u8bc4\u8bba\u6846</span></div><a class="ds-dialog-close" href="javascript:void(0)" title="\u5173\u95ed"></a></div></div>')).open()
+                w.dialog = (new H.Dialog('<div class="ds-dialog"><div class="ds-dialog-inner ds-rounded"><div class="ds-dialog-body">' + e + '</div><div class="ds-dialog-footer"><a href="http://duoshuo.com/" target="_blank" class="ds-logo"></a><span>\u793e\u4f1a\u5316\u8bc4\u8bba\u6846</span></div><a class="ds-dialog-close" href="javascript:void(0)" title="\u5173\u95ed"><i class="fa fa-times-circle"></i></a></div></div>')).open()
         },
         F = w.injectScript = function(r, i) {
             var s = t.createElement("script"),
@@ -659,7 +653,7 @@ function os(e) {
                 return '<a href="javascript:void(0)" class="ds-service-icon' + (t ? "-grey": "") + " ds-" + e + '" data-service="' + e + '" title="' + w.sourceName[e] + '"></a>'
             },
             loginButtons: function(e) {
-                return '<div class="ds-login-buttons"><p>\u793e\u4ea4\u5e10\u53f7\u767b\u5f55:</p><div class="ds-social-links">' + J.serviceList() + J.additionalServices() + "</div></div>"
+                return '<div class="ds-login-buttons">' + '<div class="ds-social-links">' + J.serviceList() + J.additionalServices() + "</div></div>"
             },
             poweredBy: function(e) {
                 return '<p class="ds-powered-by"><a href="http://duoshuo.com" target="_blank" rel="nofollow">' + p(e) + "</a></p>"
@@ -668,17 +662,17 @@ function os(e) {
             waitingImg: g('<div id="ds-waiting"></div>'),
             serviceList: function(e) {
                 var t = '<ul class="ds-service-list">',
-                    n = ["weibo", "qq", "renren", "douban"],
-                    r = 0;
-                for (; r < n.length; r++) t += J.loginItem(n[r], e);
-                return t + '<li><a class="ds-more-services" href="javascript:void(0)">\u66f4\u591a\u00bb</a></li>' + "</ul>"
-            },
-            additionalServices: function(e) {
-                var t = '<ul class="ds-service-list ds-additional-services">',
-                    n = ["kaixin", "netease", "sohu", "baidu", "google"],
+                    n = ["weibo", "qq", "renren", "douban","kaixin","netease", "baidu", "google"],
                     r = 0;
                 for (; r < n.length; r++) t += J.loginItem(n[r], e);
                 return t + "</ul>"
+            },
+            additionalServices: function(e) {
+                var t = '',
+                    n = [],
+                    r = 0;
+                for (; r < n.length; r++) t += J.loginItem(n[r], e);
+                return t + ""
             },
             loginItem: function(e, t) {
                 var n = J[t ? "bindUrl": "loginUrl"](e);
@@ -1004,7 +998,7 @@ function os(e) {
                     },
                     y = function(e) {
                         var t = i(this);
-                        t.height(Math.max(54, t.next(".ds-hidden-text").text(this.value).height() + 27))
+                        t.height(Math.max(80, t.next(".ds-hidden-text").text(this.value).height() + 27))
                     },
                     O = function(t, n) {
                         var i = {
@@ -1202,7 +1196,7 @@ function os(e) {
                             };
                         for (var a in r.repostOptions) r.repostOptions[a] && (i.push(a), o = 1),
                             s += J.serviceIcon(a, !r.repostOptions[a]);
-                        return '<div class="ds-replybox"><a class="ds-avatar"' + (ct() ? ' href="javascript:void(0);" onclick="return false"': ' href="' + w.REMOTE + "/settings/avatar/" + W(X()) + '" target="_blank" title="\u8bbe\u7f6e\u5934\u50cf"') + ">" + J.avatarImg(r) + "</a>" + '<form method="post">' + Q(u) + '<div class="ds-textarea-wrapper ds-rounded-top">' + '<textarea name="message" title="Ctrl+Enter\u5feb\u6377\u63d0\u4ea4" placeholder="' + p(k.leave_a_message) + '"></textarea>' + '<pre class="ds-hidden-text"></pre>' + "</div>" + '<div class="ds-post-toolbar">' + '<div class="ds-post-options ds-gradient-bg">' + '<span class="ds-sync">' + (!ct() && s ? '<input id="ds-sync-checkbox' + (t ? "-inline": "") + '" type="checkbox" name="repost" ' + (o ? 'checked="checked" ': "") + 'value="' + i.join(",") + '"> <label for="ds-sync-checkbox' + (t ? "-inline": "") + '">' + k.share_to + "</label>" + s: "") + "</span>" + "</div>" + '<button class="ds-post-button" type="submit">' + p(k.post) + "</button>" + '<div class="ds-toolbar-buttons">' + (n.use_smilies ? '<a class="ds-toolbar-button ds-add-emote" title="\u63d2\u5165\u8868\u60c5"></a>': "") + (n.use_images && n.parse_html_enabled ? '<a class="ds-toolbar-button ds-add-image" title="\u63d2\u5165\u56fe\u7247"></a>': "") + "</div>" + "</div>" + "</form>" + "</div>"
+                        return '<div class="ds-replybox"><a class="ds-avatar"' + (ct() ? ' href="javascript:void(0);" onclick="return false"': ' href="' + w.REMOTE + "/settings/avatar/" + W(X()) + '" target="_blank" title="\u8bbe\u7f6e\u5934\u50cf"') + ">" + J.avatarImg(r) + "</a>" + '<form method="post">' + Q(u) + '<div class="ds-textarea-wrapper ds-rounded-top">' + '<textarea name="message" class="OwO-textarea" title="Ctrl+Enter\u5feb\u6377\u63d0\u4ea4" placeholder="' + p(k.leave_a_message) + '"></textarea>' + '<pre class="ds-hidden-text"></pre>' + "</div>" + '<div class="ds-post-toolbar">' + '<div class="ds-post-options ds-gradient-bg">' + '<span class="ds-sync">' + (!ct() && s ? '<input id="ds-sync-checkbox' + (t ? "-inline": "") + '" type="checkbox" name="repost" ' + (o ? 'checked="checked" ': "") + 'value="' + i.join(",") + '"> <label for="ds-sync-checkbox' + (t ? "-inline": "") + '">' + k.share_to + "</label>" + s: "") + "</span>" + "</div>" + '<button class="ds-post-button fa fa-paper-plane-o" type="submit">' + "</button>" + '<div class="ds-toolbar-buttons">' + (n.use_smilies ? '<div class="OwO"></div>': "") + (n.use_images && n.parse_html_enabled ? '<a class="ds-toolbar-button ds-add-image" title="\u63d2\u5165\u56fe\u7247"><i class="fa fa-file-image-o"></i></a>': "") + "</div>" + "</div>" + "</form>" + "</div>"
                     },
                     H.Replybox = function(e) {
                         this.embedThread = e
@@ -1243,7 +1237,7 @@ function os(e) {
                                 b = a.find(".ds-add-image").click(function(e) {
                                     var n = h[0],
                                         r = n.value,
-                                        i = "\u8bf7\u8f93\u5165\u56fe\u7247\u5730\u5740",
+                                        i = "\u975e\u0020\u0048\u0054\u0054\u0050\u0053\u0020\u7684\u56fe\u7247\u94fe\u63a5\u4f1a\u88ab\u5403\u6389\u54d2\u007e",
                                         s = '<img src="' + i + '" />';
                                     if (t.selection) {
                                         n.value = r.substring(0, v.start) + s + r.substring(v.end, r.length),
@@ -1267,12 +1261,10 @@ function os(e) {
                                         i(t.body).unbind("click", E)
                                 },
                                 S = function(e, t) {
-                                    var n = j('<h2>\u793e\u4ea4\u5e10\u53f7\u767b\u5f55</h2><div class="ds-icons-32">' + i.map(["weibo", "qq", "renren", "kaixin", "douban", "netease", "sohu"],
+                                    var n = j('<div class="ds-icons-32">' + i.map(["weibo", "qq", "renren", "kaixin", "douban", "netease", "baidu", "google"],
                                             function(e) {
                                                 return '<a class="ds-' + e + '" href="' + J.loginUrl(e) + '">' + w.sourceName[e] + "</a>"
-                                            }).join("") + "</div>" + (s.deny_anonymous ? "": '<h2>\u4f5c\u4e3a\u6e38\u5ba2\u7559\u8a00</h2><form><div class="ds-control-group"><input type="text" name="author_name" id="ds-dialog-name" value="' + p(rt.data.name) + '" required />' + '<label for="ds-dialog-name">\u540d\u5b57(\u5fc5\u586b)</label>' + "</div>" + (s.require_guest_email ? '<div class="ds-control-group"><input type="email" name="author_email" id="ds-dialog-email" value="' + p(rt.data.email) + '" required />' + '<label for="ds-dialog-email">\u90ae\u7bb1(\u5fc5\u586b)</label>' + "</div>": "") + (s.require_guest_url ? '<div class="ds-control-group"><input type="url" name="author_url" id="ds-dialog-url" placeholder="http://" value="' + p(rt.data.url || "") + '" />' + '<label for="ds-dialog-url">\u7f51\u5740(\u53ef\u9009)</label>' + "</div>": "") + '<button type="submit">\u53d1\u5e03</button>' + "</form>")),
-                                        r = n.el.find(".ds-dialog").css("width", "320px");
-                                    M(r, ".ds-icons-32 a");
+                                            }).join("") + "</div>" + (s.deny_anonymous ? "": '<h2>\u4f5c\u4e3a\u6e38\u5ba2\u7559\u8a00</h2><form><div class="ds-control-group"><input type="text" name="author_name" id="ds-dialog-name" placeholder="昵称 *" value="' + p(rt.data.name) + '" required />' + '<label for="ds-dialog-name">\u540d\u5b57(\u5fc5\u586b)</label>' + "</div>" + (s.require_guest_email ? '<div class="ds-control-group"><input type="email" name="author_email" id="ds-dialog-email" placeholder="邮箱 *" value="' + p(rt.data.email) + '" required />' + '<label for="ds-dialog-email">\u90ae\u7bb1(\u5fc5\u586b)</label>' + "</div>": "") + (s.require_guest_url ? '<div class="ds-control-group"><input type="url" name="author_url" id="ds-dialog-url" placeholder="http://" value="' + p(rt.data.url || "") + '" />' + '<label for="ds-dialog-url">\u7f51\u5740(\u53ef\u9009)</label>' + "</div>": "") + '<button type="submit">\u53d1\u5e03</button>' + "</form>"));
                                     if (!s.deny_anonymous) {
                                         var o = n.el.find("form");
                                         o.submit(function(e) {
@@ -1731,7 +1723,7 @@ function os(e) {
                     },
                     J.toolbar = function(e) {
                         var t = J.logoutUrl();
-                        return '<div class="ds-toolbar"><div class="ds-account-control"><span class="ds-icon ds-icon-settings"></span> <span>\u5e10\u53f7\u7ba1\u7406</span><ul><li><a class="ds-bind-more" href="javascript:void(0);" style="border-top: none">\u7ed1\u5b9a\u66f4\u591a</a></li><li><a target="_blank" href="' + w.REMOTE + "/settings/" + W(X()) + '">' + p(k.settings) + "</a></li>" + '<li><a rel="nofollow" href="' + t + '" style="border-bottom: none">\u767b\u51fa</a></li>' + "</ul>" + "</div>" + '<div class="ds-visitor">' + (rt.data.url ? '<a class="ds-visitor-name" href="' + p(rt.data.url) + '" target="_blank">' + p(rt.data.name) + "</a>": '<span class="ds-visitor-name">' + p(rt.data.name) + "</span>") + '<a class="ds-unread-comments-count" href="javascript:void(0);" title="\u65b0\u56de\u590d"></a>' + "</div>" + "</div>"
+                        return '<div class="ds-toolbar"><div class="ds-account-control"><span class="ds-icon ds-icon-settings"></span> <span>'+'</span><ul><li><a class="ds-bind-more" href="javascript:void(0);" style="border-top: none"><i class="fa fa-retweet"></i></a></li><li><a target="_blank" href="' + w.REMOTE + "/settings/" + W(X()) + '">' + '<i class="fa fa-gears"></i>' + "</a></li>" + '<li><a rel="nofollow" href="' + t + '" style="border-bottom: none"><i class="fa fa-sign-out"></i></a></li>' + "</ul>" + "</div>" + '<div class="ds-visitor">' + (rt.data.url ? '<a class="ds-visitor-name" href="' + p(rt.data.url) + '" target="_blank">' + p(rt.data.name) + "</a>": '<span class="ds-visitor-name">' + p(rt.data.name) + "</span>") + '<a class="ds-unread-comments-count" href="javascript:void(0);" title="\u65b0\u56de\u590d"></a>' + "</div>" + "</div>"
                     },
                     H.EmbedThread = R.extend({
                         uri: "/api/threads/listPosts",
@@ -2020,6 +2012,4 @@ function os(e) {
             })
 })(window, document);
 
-// HACK 内容 开始
-// document.getElementsByClassName('ds-post-reply')[0].innnerHTML = "<span class='fa fa-reply'></span>";
 //自定义表情文件开始

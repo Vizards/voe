@@ -24,6 +24,7 @@
     "webpack": "^1.12.13"
   },
   "dependencies": {
+    "owo": "^1.0.2",
     "trim-html": "^0.1.7"
   }
 }

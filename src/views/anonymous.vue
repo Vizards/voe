@@ -1,4 +1,8 @@
 <template>
+    <div class="rl-cmts-box">
+        <textarea placeholder="匿名发表..." id="rlCmtsInputContent"></textarea>
+        <button id="rlCmtsSubmit">提交</button>
+    </div>
 </template>
 <style>
 </style>
@@ -55,18 +59,18 @@
                         self.dataRef.on('child_added', function (ss2) {
                             // console.log('on child_added', ss2.val());
                             var cmt = ss2.val();
-                            var li = document.createElement('li');
-                            li.innerHTML = '<span class="rl-cmts-user-name">' + '' + '</span>' + cmt.content + ' <span class="rl-cmts-timestamp">' + (new Date(cmt.time)).toLocaleString() + '</span>'
-                            self.list.appendChild(li);
+                            var innerDiv = document.createElement('div');
+                            innerDiv.innerHTML = '<pre>' + cmt.content + '</pre>' + ' <span class="rl-cmts-timestamp">' + (new Date(cmt.time)).toLocaleString() + '</span>'
+                            self.list.appendChild(innerDiv);
                             setTimeout(function () {
-                                li.classList.add('shown');
+                                innerDiv.classList.add('shown');
                             }, 160);
                         });
                     },
                     setHtml: function () {
                         var self = RLComments;
 
-                        self.list = document.createElement('ul');
+                        self.list = document.createElement('div');
                         self.list.className = 'rl-cmts-list';
                         var html = '';
                         for (var k in this.comments) {
@@ -74,19 +78,11 @@
                                 continue;
                             }
                             var cmt = this.comments[k];
-                            html += '<li><span class="rl-cmts-user-name">' + '' + '</span> : ' + cmt.content + ' <span class="rl-cmts-timestamp">' + (new Date(cmt.time)).toLocaleString() + '</span></li>';
+                            html += cmt.content + ' <span class="rl-cmts-timestamp">' + (new Date(cmt.time)).toLocaleString() + '</span>';
                         }
                         self.list.innerHTML = html;
                         this.container.appendChild(self.list);
 
-                        var box = document.createElement('div');
-                        box.className = 'rl-cmts-box';
-
-                        box.innerHTML =
-                                '<p><textarea placeholder="匿名发表..." id="rlCmtsInputContent"></textarea></p>' +
-                                '<p><button id="rlCmtsSubmit">提交</button></p>';
-
-                        this.container.appendChild(box);
 
                         var contentInput = document.getElementById('rlCmtsInputContent'),
                                 submitBtn = document.getElementById('rlCmtsSubmit');

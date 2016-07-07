@@ -1,4 +1,6 @@
 #ds-reset{
+    margin-top: 80px;
+    margin-bottom: 50px;
     ul,li {
         list-style: none;
     }
@@ -10,41 +12,196 @@
     }
     .ds-comments {
         padding-left: 0;
+        position: relative;
+        &:before {
+            content: '';
+            width: 2px;
+            height: 100%;
+            background: rgb(255, 255, 255);
+            position: absolute;
+            left: 26px;
+            top: 17px;
+        }
     }
     .ds-post {
         .ds-post-self {
+            padding-top: 10px;
             display: flex;
             flex: 1;
         }
         .ds-avatar {
             flex: 0 0 50px;
             order: -1;
+            z-index: 99;
             img {
                 border-radius: 50%;
                 border: 2px solid #ffffff;
             }
         }
+        .ds-children {
+            padding: 0 0 0 73px;
+            position: relative;
+            .ds-post {
+                position: relative;
+                &:before {
+                    content: '';
+                    width: 60px;
+                    height: 2px;
+                    background: rgb(255, 255, 255);
+                    position: absolute;
+                    top: 36px;
+                    left: -45px;
+                }
+            }
+            &:before {
+                content: '';
+                width: 2px;
+                height: 120px;
+                background: rgb(255, 255, 255);
+                position: absolute;
+                left: 26px;
+                top: -82px;
+            }
+        }
+        .ds-inline-replybox {
+            margin-left: 73px;
+            .ds-avatar {
+                top: 0;
+                left: -73px;
+            }
+            form {
+                .ds-post-toolbar {
+                    i, button {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
         .ds-comment-body {
+            font-size: 14px;
+            margin-top: 9px;
             display: flex;
             flex: 1;
             flex-wrap: wrap;
+            position: relative;
+            margin-left: 19px;
+            &:before {
+                content: '';
+                height: 0;
+                width: 0;
+                position: absolute;
+                display: block;
+                border-width: 10px 12px 10px 0;
+                border-style: solid;
+                border-color: rgba(222, 225, 227,0) rgb(255, 255, 255);
+                box-sizing:border-box;
+                top: 9px;
+                left: -8px;
+            }
+            &:after {
+                content: '';
+                height: 0;
+                width: 0;
+                position: absolute;
+                display: block;
+                border-width: 9px 12px 9px 0;
+                border-style: solid;
+                border-color: rgba(245, 245, 245, 0) rgb(255, 255, 255);
+                box-sizing:border-box;
+                top: 10px;
+                left: -11px;
+            }
+            /* 气泡背景颜色处理 */
+            .ds-comment-header,.ds-comment-footer,p {
+                background-color: rgb(255, 255, 255);
+            }
             p {
                 width: 100%;
+                border-radius: 2px;
+                padding: 10px;
             }
             .ds-comment-footer {
                 order: -1;
+                position: absolute;
+                width: 30%;
+                height: 36px;
+                text-align: right;
+                border-radius: 2px;
+                .ds-time {
+                    margin-right: 15px;
+                }
+                a {
+                   margin-right: 10px;
+                   color: #00a67c;
+                }
+                .ds-post-reply {
+                    .fa-paper-plane {
+                        display: none;
+                    }
+                    &:hover {
+                        .fa-paper-plane {
+                            display: inline-block;
+                        }
+                        .fa-paper-plane-o {
+                            display: none;
+                        }
+                    }
+                }
+                .ds-post-likes {
+                    .fa-heart {
+                        display: none;
+                    }
+                    &:hover {
+                        .fa-heart {
+                            display: inline-block;
+                        }
+                        .fa-heart-o {
+                            display: none;
+                        }
+                    }
+                }
+                .ds-post-delete {
+                    .fa-trash {
+                        display: none;
+                    }
+                    &:hover {
+                        .fa-trash {
+                            display: inline-block;
+                        }
+                        .fa-trash-o {
+                            display: none;
+                        }
+                    }
+                }
+
+                .ds-time {
+                    display: inline-block;
+                    margin-top: 11px;
+                }
                 .ds-post-repost,.ds-post-report {
                     display: none;
                 }
             }
             .ds-comment-header {
                 order: -2;
+                width: 70%;
+                height: 36px;
+                border-radius: 2px;
+                border-bottom: 1px solid rgb(245, 245, 245);
+                .ds-user-name {
+                    display: inline-block;
+                    margin-top: 11px;
+                    margin-left: 10px;
+                }
+                a {
+                    color: rgb(0, 89, 153);
+                }
                 .ua .ua .sskadmin {
                     color: #00a67c;
                 }
                 span.ua {
                     display: inline-block !important;
-                    margin: auto 1px .3em !important;
+                    margin: auto 2px;
                     color: #fff !important;
                 }
                 .os_other {
@@ -273,13 +430,255 @@
             }
         }
     }
-    .ds-replybox {
-        .ds-hidden-text, .ds-avatar {
+    .ds-login-buttons {
+        position: relative;
+        padding-left: 50px;
+        padding-bottom: 3px;
+        .ds-social-links {
+            font-family: "socialshare";
+            font-style: normal;
+            display: inline-block;
+            vertical-align: middle;
+            &:after {
+                content: '请先登录';
+                position: absolute;
+                right: 0;
+                top: 9px;
+                font-size: 14px;
+                color: rgb(130,130,130);
+            }
+            .icon-google{
+                font-family: "socialshare";
+                &:before { content: "\f04a";  }
+                font-style: normal;
+            }
+            .ds-service-list {
+                margin: 0;
+                li {
+                    margin: 0 10px;
+                    display: inline-block;
+                    a {
+                        i {
+                            font-size: 18px;
+                            color: rgb(172,172,172);
+                            transition-duration: 0.2s;
+                            transition-propety: color;
+                        }
+                        .icon-weibo:hover {color: rgb(255, 130, 0)}
+                        .icon-google:hover {color: rgb(219, 68, 55)}
+                        .icon-qq:hover {color: rgb(18, 183, 245);}
+                        .icon-renren:hover {color: rgb(34, 125, 197);}
+                        .icon-douban:hover {color: rgb(46, 150, 61)}
+                        .icon-kx001:hover {color: rgb(254, 217, 70)}
+                        .icon-wangyi:hover {color: rgb(190, 48, 56)}
+                        .icon-baidu:hover {color: rgb(41, 50, 255)}
+                    }
+                }
+            }
+        }
+    }
+    .ds-toolbar {
+        height: 30px;
+        .ds-visitor {
             display: none;
+        }
+        .ds-account-control {
+            ul {
+                padding-left: 90px;
+                li {
+                    float: right;
+                    padding-right: 10px;
+                    padding-top: 5px;
+                    a {
+                        i {
+                            font-size: 24px;
+                            color: rgb(135,135,135);
+                            transition-duration: 0.2s;
+                            transition-propety: color;
+                            &:hover {
+                                color: #00a67c;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .ds-replybox {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+        .ds-avatar {
+            position: absolute;
+            top: -60px;
+            img {
+                border-radius: 50%;
+                border: 2px solid rgb(255,255,255);
+            }
+        }
+        .ds-hidden-text, .ds-post-options {
+            display: none;
+        }
+        form {
+            background-color: rgb(255,255,255);
+            .ds-textarea-wrapper {
+                margin-top: 10px;
+                padding: 10px;
+                textarea {
+                    width: 100%;
+                    height: 80px;
+                    padding: 0;
+                    resize: none;
+                    border: none;
+                    outline: none;
+                    font-size: 14px;
+                }
+            }
+            .ds-post-toolbar {
+                i,button {
+                    font-size: 18px;
+                    color: #7f7f7f;
+                    transition-duration: 0.2s;
+                    transition-propety: color;
+                    &:hover {
+                        color: #00a67c;
+                    }
+                }
+                display: flex;
+                background-color: rgb(255,255,255);
+                padding: 10px;
+                border-top: 1px solid rgb(245,245,245);
+                .ds-post-button {
+                    border: none;
+                    background: rgba(0,0,0,0);
+                    padding: 0;
+                    outline: none;
+                }
+                .ds-toolbar-buttons {
+                    order: -1;
+                    display: flex;
+                    flex: 1;
+                    flex-wrap: wrap;
+                    a {
+                        cursor: pointer;
+                    }
+                    .OwO {
+                        width: 80%;
+                        display: inline-block;
+                    }
+                    .ds-toolbar-button {
+                        order: -1;
+                        margin-right: 10px;
+                    }
+                }
+            }
         }
     }
     .ds-powered-by {
         display: none;
+    }
+}
+#ds-wrapper {
+    z-index: 999;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    .ds-dialog {
+        background: rgba(0,0,0,0.13);
+        .ds-dialog-inner {
+            position: relative;
+            .ds-dialog-body {
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                .ds-icons-32,.ds-service-list {
+                    margin: auto;
+                    font-family: "socialshare";
+                    font-style: normal;
+                    padding-bottom: 20px;
+                    a {
+                        margin: 5px;
+                        color: rgb(255,255,255);
+                        transition-duration: 0.2s;
+                        transition-propety: color;
+                        font-size: 24px;
+                        .icon-weibo:hover {color: rgb(255, 130, 0)}
+                        .icon-google:hover {color: rgb(219, 68, 55)}
+                        .icon-qq:hover {color: rgb(18, 183, 245);}
+                        .icon-renren:hover {color: rgb(34, 125, 197);}
+                        .icon-douban:hover {color: rgb(46, 150, 61)}
+                        .icon-kx001:hover {color: rgb(254, 217, 70)}
+                        .icon-wangyi:hover {color: rgb(190, 48, 56)}
+                        .icon-baidu:hover {color: rgb(41, 50, 255)}
+                    }
+                    .icon-google{
+                        font-family: "socialshare";
+                        &:before { content: "\f04a";  }
+                        font-style: normal;
+                    }
+                }
+                .ds-service-list {
+                    padding-left: 0;
+                    li {
+                        float: left;
+                    }
+                }
+                h2 {
+                    order: -2;
+                    text-align: center;
+                    margin: 30px 0;
+                    font-size: 30px;
+                    color: rgb(255,255,255);
+                }
+                form {
+                    order: -1;
+                    .ds-control-group {
+                        input {
+                            display: block;
+                            width: 300px;
+                            margin: 20px auto;
+                            padding: 15px;
+                            background: rgba(0,0,0,0.2);
+                            color: rgb(255,255,255);
+                            border: 0;
+                            outline: 0;
+                        }
+                        input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+                            color: rgb(235,235,235);
+                        }
+                        input:-moz-placeholder, textarea:-moz-placeholder {
+                            color: rgb(235,235,235);
+                        }
+
+                        label {
+                            display: none;
+                        }
+                    }
+                    button {
+                        background: rgb(46, 204, 113);
+                        border: 0;
+                        color: rgb(255, 255, 255);
+                        padding: 10px;
+                        font-size: 20px;
+                        width: 330px;
+                        margin: 20px auto;
+                        display: block;
+                        cursor: pointer;
+                        outline: none;
+                    }
+                }
+            }
+            .ds-dialog-footer {
+                display: none;
+            }
+            .ds-dialog-close {
+                position: absolute;
+                right: -7px;
+                top: -9px;
+                color: rgb(175,175,175);
+            }
+        }
     }
 }
 

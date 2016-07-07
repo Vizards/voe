@@ -1,6 +1,7 @@
 var Vue = require('vue'),
 	Router = require('vue-router'),
-    trimHtml = require('trim-html');
+    trimHtml = require('trim-html'),
+    OwO = require('owo');
 
 require('./style/sass/entry.scss');
 require('./script/script.js');
@@ -36,7 +37,7 @@ router.map({
         name: 'anonymous',
         component:require('./views/anonymous.vue')
     },
-    '/donate':{
+    '/donate/':{
         name: 'donate',
         component:require('./views/donate.vue')
     },
@@ -109,6 +110,31 @@ Vue.directive('show-comment',{
                 }, false);
 
                 $('.share').emoji();
+                $('footer').emoji();
+                window.setTimeout(function () {
+                    var OwO_demo = new OwO({
+                        logo: '<i class="fa fa-smile-o"></i>',
+                        container: document.getElementsByClassName('OwO')[0],
+                        target: document.getElementsByClassName('OwO-textarea')[0],
+                        api: 'https://o9wj5x8i4.qnssl.com/owo.json',
+                        position: 'down',
+                        width: '100%',
+                        maxHeight: '250px'
+                    })
+                },1000);
+                window.setInterval(function () {
+                    if ($('.OwO').hasClass('OwO-open') == false) {
+                            var OwO_demo = new OwO({
+                                logo: '<i class="fa fa-smile-o"></i>',
+                                container: document.getElementsByClassName('OwO')[0],
+                                target: document.getElementsByClassName('OwO-textarea')[0],
+                                api: 'https://o9wj5x8i4.qnssl.com/owo.json',
+                                position: 'down',
+                                width: '100%',
+                                maxHeight: '250px'
+                            })
+                    }
+                },1000)
             });
         }
     }

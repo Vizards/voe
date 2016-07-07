@@ -79,6 +79,7 @@ addSpace();
     $(function () {
         $('#entrance').click(function () {
             $("#gradient").fadeOut();
+            window.setTimeout("$('#gradient').remove()",1000);
             $('body').css("overflow", "auto");
         });
     });
