@@ -1,6 +1,6 @@
 <template>
     <loading v-if="showload"></loading>
-    <div class="wwdc">
+    <div class="donate">
         <div class="wwdc__marketingfoobar">
             <span class="unicorn2">Thanks</span>
             <span class="unicorn3">For Your</span>
@@ -16,25 +16,29 @@
             <span class="unicorn5">But when the trees bow down their heads, </span><br>
             <span class="unicorn4">The wind is passing by.</span>
         </div>
+
+        <div class="donate-page">
+            <div id="DonateText" class="tr3">Donate</div>
+            <ul id="donateBox" class="list pos-f tr3">
+                <li id="PayPal">PayPal</li>
+                <li id="BTC" data-footnote="Copy addres and show QRCod"><button id="BTCBn"  data-clipboard-target="#btc-key" alt="Copy to clipboard">Bitcoin</button></li>
+                <li id="AliPay">AliPay</li>
+                <li id="WeChat">WeChat</li>
+            </ul>
+            <div id="QRBox" class="pos-f left-100">
+                <div id="MainBox"></div>
+            </div>
+            <!-- Bitcoin 账号 -->
+            <input id="btc-key" type="text" value="1LVPGPkJxndGJe4KzeY9afLRdSeeSPnW5E" readonly="readonly">
+        </div>
     </div>
 
-    <div class="donate-page">
-        <div id="DonateText" class="tr3">Donate</div>
-        <ul id="donateBox" class="list pos-f tr3">
-            <li id="PayPal">PayPal</li>
-            <li id="BTC" data-footnote="Copy addres and show QRCod"><button id="BTCBn"  data-clipboard-target="#btc-key" alt="Copy to clipboard">Bitcoin</button></li>
-            <li id="AliPay">AliPay</li>
-            <li id="WeChat">WeChat</li>
-        </ul>
-        <div id="QRBox" class="pos-f left-100">
-            <div id="MainBox"></div>
-        </div>
-        <!-- Bitcoin 账号 -->
-        <input id="btc-key" type="text" value="1LVPGPkJxndGJe4KzeY9afLRdSeeSPnW5E" readonly="readonly">
-    </div>
 </template>
 <script>
     module.exports = {
+        components: {
+            'loading':require('../components/loading.vue')
+        },
         route: {
             data: function () {
                     String.prototype.getQuery = function (name) {

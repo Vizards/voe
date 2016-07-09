@@ -1,0 +1,66 @@
+#construction {
+    position:relative;
+    transform:translateY(-5%);
+    h2 {
+        text-align: center;
+        font-family: 'Roboto Mono', monospace;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: normal;
+        position: absolute;
+        top: 15%;
+        left: -10%;
+        color: rgb(179, 179, 179);
+        -webkit-transform: rotate(-33deg);
+        -moz-transform: rotate(-33deg);
+        -o-transform: rotate(-33deg);
+    }
+    svg{
+        width:700px;
+        max-width:100%;
+        height:auto;
+        margin:0 auto;
+        display:block;
+        #service1,#service2,#service3,#service4,#service5,#service6,#service7,#service8{
+            transform-origin:50% 100%;
+            -moz-transform-origin:50% 100%;
+            animation: appear 1s 1;
+            animation-timing-function: cubic-bezier(.63,.09,.3,1.43);
+            animation-fill-mode:forwards;
+            transform:scale(0);
+        }
+
+        #service2{
+            animation-delay: 0.3s;
+        }
+        #service3{
+            animation-delay: 0.6s;
+        }
+        #service4{
+            animation-delay: 0.9s;
+        }
+        #service5{
+            animation-delay: 1.2s;
+        }
+        #service6{
+            animation-delay: 1.5s;
+        }
+        #service7{
+            animation-delay: 1.8s;
+        }
+        #service8{
+            animation-delay: 2.1s;
+        }
+    }
+
+    /*Keyframes*/
+    @keyframes appear {
+        0%   {transform:scaleX(0) scaleY(0) translateY(0)}
+        70%  {transform:scaleX(0.7) scaleY(0.7) translateY(0)}
+        80%  {transform:scaleX(0.9) scaleY(0.5) translateY(5px)}
+        100% {transform:scaleX(1) scaleY(1) translateY(0)}
+    }
+
+
+
+}
