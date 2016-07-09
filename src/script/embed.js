@@ -545,38 +545,38 @@ function os(e) {
         O = [],
         M,
         _ = [],
-        //D = function(t) {
-        //    if (! ("WebSocket" in e && i)) return ! 1;
-        //    _.push(i.stringify(t)),
-        //    M || (M = w.webSocket = new WebSocket("wss://ws.duoshuo.com:8201/"), M.onopen = function() {
-        //        var e;
-        //        if (M.readyState === 1) while (e = _.shift()) M.send(e)
-        //    },
-        //        M.onmessage = function(e) {
-        //            try {
-        //                var t = 0,
-        //                    n, r = i.parse(e.data)
-        //            } catch(s) {
-        //                return
-        //            }
-        //            switch (r.type) {
-        //                case "post":
-        //                    for (; t < w.pagelets.length; t++) n = w.pagelets[t],
-        //                    n.threadId == r.thread_id && n.onMessage(r);
-        //                    break;
-        //                case "notification":
-        //                    O.push(r),
-        //                        lt();
-        //                    break;
-        //                default:
-        //            }
-        //        },
-        //        e.addEventListener("beforeunload",
-        //            function() {
-        //                M.close()
-        //            })),
-        //        M.onopen()
-        //},
+        D = function(t) {
+            if (! ("WebSocket" in e && i)) return ! 1;
+            _.push(i.stringify(t)),
+            M || (M = w.webSocket = new WebSocket("ws://ws.duoshuo.com:8201/"), M.onopen = function() {
+                var e;
+                if (M.readyState === 1) while (e = _.shift()) M.send(e)
+            },
+                M.onmessage = function(e) {
+                    try {
+                        var t = 0,
+                            n, r = i.parse(e.data)
+                    } catch(s) {
+                        return
+                    }
+                    switch (r.type) {
+                        case "post":
+                            for (; t < w.pagelets.length; t++) n = w.pagelets[t],
+                            n.threadId == r.thread_id && n.onMessage(r);
+                            break;
+                        case "notification":
+                            O.push(r),
+                                lt();
+                            break;
+                        default:
+                    }
+                },
+                e.addEventListener("beforeunload",
+                    function() {
+                        M.close()
+                    })),
+                M.onopen()
+        },
         P = w.Collections = {},
         H = w.Views = {},
         B = w.Callbacks = {},
@@ -632,12 +632,18 @@ function os(e) {
                 return e.url
             },
             avatarUrl: function(e, t) {
-                if (e.avatar_url) {
-                    e.avatar_url = e.avatar_url.replace(/^http\:\/\//, "https://vizards.cc/proxy/");
-                } else {
-                    nt.data.default_avatar_url = '/static/img/blog/default_avatar.png';
+                if(e.avatar_url){
+                    e.avatar_url = e.avatar_url.replace(/^http\:\/\//,"https://");
+                    e.avatar_url = e.avatar_url.replace(/himg\.bdimg\.com/,"nzriuc44h.qnssl.com");
+                    e.avatar_url = e.avatar_url.replace(/ds\.cdncache\.org/,"nzrisok3d.qnssl.com");
+                    e.avatar_url = e.avatar_url.replace(/img\.kaixin001\.com\.cn/,"nzrktdox3.qnssl.com");
+                    e.avatar_url = e.avatar_url.replace(/img\d+\.douban\.com/,"img2.doubanio.com");
+                    e.avatar_url = e.avatar_url.replace(/app\.qlogo\.cn/,"nzvcelvwu.qnssl.com");
+                    e.avatar_url = e.avatar_url.replace(/wx\.qlogo\.cn/,"nzwsf9aei.qnssl.com");
+                    e.avatar_url = e.avatar_url.replace(/tp\d+\.sinaimg\.cn/,"nzqv0a582.qnssl.com");
+                }else{
+                    nt.data.default_avatar_url=nt.data.default_avatar_url.replace(/^http\:\/\//,"https://");
                 }
-
                 return e.avatar_url || nt.data.default_avatar_url
             },
             userAnchor: function(e) {

@@ -110,7 +110,7 @@ Vue.directive('show-comment',{
                 }, false);
 
                 $('.share').emoji();
-                $('footer').emoji();
+                $('footer > span').emoji();
                 window.setTimeout(function () {
                     if ($('.OwO').length > 0) {
                         var OwO_demo = new OwO({

@@ -1,0 +1,30 @@
+.not-found {
+    margin-top: -150px;
+    .not-found-face {
+        margin-bottom: 50px;
+        img {
+            width: 72px;
+            height: 72px;
+        }
+    }
+    .information {
+        h2 {
+            font-weight: normal;
+        }
+        .en-info {
+            font-size: 14px;
+            color: rgb(105,105,105);
+        }
+    }
+    .button {
+        margin-top: 50px;
+        float: right;
+        a {
+            border: 1px solid rgba(0,0,0,0);
+            padding: 10px 15px;
+            border-radius: 3px;
+            background-color: rgb(79, 192, 141);
+            color: rgb(255, 255, 255);
+        }
+    }
+}
