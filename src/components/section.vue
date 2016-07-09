@@ -6,7 +6,7 @@
                     <h1>{{post.title}}</h1>
                     <span class="pub-time" >
                         <i class="fa fa-clock-o"></i>
-                        <span v-f-time="post.created_at"></span>
+                        <span v-f-time="post.published_at"></span>
                     </span>
                     <article class="article-post-meta" v-f-html="post.html">
                     </article>
@@ -25,7 +25,7 @@
 			<template v-else>
                 <div class="post-content">
                     <h1>{{post.title}}</h1>
-                    <span v-f-time="post.created_at"></span>
+                    <span v-f-time="post.published_at"></span>
                 </div>
 				<article class="markdown-body">
                     {{{post.html}}}

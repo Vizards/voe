@@ -19,7 +19,7 @@
 			data:function(transition){
 				var tmp_id = transition.to.params.slug;
 				//limit 大小应该与你后台设置的每页显示文章数一致
-				$.get(ghost.url.api('posts/slug/'+tmp_id,{fields:'title,html,created_at,slug,url,image',limit:'3',page:tmp_id}))
+				$.get(ghost.url.api('posts/slug/'+tmp_id,{fields:'title,html,created_at,slug,url,image,published_at',limit:'5',page:tmp_id}))
 					.done(function(data){
 					    transition.next({post_content:data.posts[0],showload:false});
                     })
