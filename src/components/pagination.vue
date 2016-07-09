@@ -1,8 +1,8 @@
 <template>
-	<ul class="pagination">
-		<li v-show="canPrev"><a href="#" @click.stop.prevent="forward">&laquo;</a></li>
-		<li v-show="canNext"><a href="#" @click.stop.prevent="backward">&raquo;</a></li>
-	</ul>
+	<div class="pagination">
+		<span v-show="canPrev" id="prev"><a href="#" @click.stop.prevent="forward">Prev</a></span>
+		<span v-show="canNext" id="next"><a href="#" @click.stop.prevent="backward">Next</a></span>
+	</div>
 </template>
 
 <script>

@@ -112,15 +112,17 @@ Vue.directive('show-comment',{
                 $('.share').emoji();
                 $('footer').emoji();
                 window.setTimeout(function () {
-                    var OwO_demo = new OwO({
-                        logo: '<i class="fa fa-smile-o"></i>',
-                        container: document.getElementsByClassName('OwO')[0],
-                        target: document.getElementsByClassName('OwO-textarea')[0],
-                        api: 'https://o9wj5x8i4.qnssl.com/owo.json',
-                        position: 'down',
-                        width: '100%',
-                        maxHeight: '250px'
-                    })
+                    if ($('.OwO').length > 0) {
+                        var OwO_demo = new OwO({
+                            logo: '<i class="fa fa-smile-o"></i>',
+                            container: document.getElementsByClassName('OwO')[0],
+                            target: document.getElementsByClassName('OwO-textarea')[0],
+                            api: 'https://o9qzg86b4.qnssl.com/owo.json',
+                            position: 'down',
+                            width: '100%',
+                            maxHeight: '250px'
+                        })
+                    }
                 },1000);
                 window.setInterval(function () {
                     if ($('.OwO').length > 0 && $('.OwO').hasClass('OwO-open') == false) {
@@ -128,7 +130,7 @@ Vue.directive('show-comment',{
                                 logo: '<i class="fa fa-smile-o"></i>',
                                 container: document.getElementsByClassName('OwO')[0],
                                 target: document.getElementsByClassName('OwO-textarea')[0],
-                                api: 'https://o9wj5x8i4.qnssl.com/owo.json',
+                                api: 'https://o9qzg86b4.qnssl.com/owo.json',
                                 position: 'down',
                                 width: '100%',
                                 maxHeight: '250px'

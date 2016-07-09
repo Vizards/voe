@@ -1,39 +1,18 @@
-.pagination{
-	font-size:0;
-	position:relative;
-	width:70%;
-	margin:0 auto;
-	margin-top:20px;
-	padding:0;
-	li{
-		position:absolute;
-		list-style:none;
-		display:inline-block;
-		top:0;
-		&:first-child{
-			left:5%;
-		}
-		&:last-child{
-			right:5%;
-		}
-	}
-	a{
-		font-size:35px;
-		color:#c2c2c2;
-		
-		&:hover{
-			color:#333 !important;
-			text-decoration:none;
-		}
-
-		&:active,
-		&:focus,
-		&:visited{
-			font-size: 35px;
-			color: #c2c2c2;
-		}
-
-	}
-
-
+.pagination {
+    text-align: center;
+    span {
+        display: inline-block;
+        margin: 30px 4px;
+        padding: 4px 12px;
+        border-radius: 4px;
+        border-bottom: 4px solid #3aa373;
+        font-size: 14px;
+        background-color: #4fc08d;
+        &:hover {
+            background-color: #22bd77
+        }
+        a {
+            color: #fff;
+        }
+    }
 }
