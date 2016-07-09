@@ -26,6 +26,19 @@
     url('/assets/fonts/meddon-v9-latin/meddon-v9-latin-regular.svg#Meddon') format('svg'); /* Legacy iOS */
 }
 
+/* roboto-mono-regular - latin */
+@font-face {
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/roboto-mono-v4-latin/roboto-mono-v4-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Roboto Mono'), local('RobotoMono-Regular'),
+    url('/assets/fonts/roboto-mono-v4-latin/roboto-mono-v4-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/assets/fonts/roboto-mono-v4-latin/roboto-mono-v4-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/assets/fonts/roboto-mono-v4-latin/roboto-mono-v4-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('/assets/fonts/roboto-mono-v4-latin/roboto-mono-v4-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/assets/fonts/roboto-mono-v4-latin/roboto-mono-v4-latin-regular.svg#RobotoMono') format('svg'); /* Legacy iOS */
+}
 /* 八大山人字体 */
 @font-face {
     font-family: 'Chinese';

@@ -1,8 +1,4 @@
 <template>
-    <div class="rl-cmts-box">
-        <textarea placeholder="匿名发表..." id="rlCmtsInputContent"></textarea>
-        <button id="rlCmtsSubmit">提交</button>
-    </div>
 </template>
 <style>
 </style>
@@ -10,6 +6,7 @@
     module.exports = {
         route: {
             data: function () {
+                $('header').css('visibility','hidden');
                 /**
                  *  Usage:
                  *  (function () {
@@ -18,10 +15,8 @@
                  *     RLComments.init(id, container);
                  *   })();
                  */
-
                 var wdscript = 'https://cdn.wilddog.com/js/client/current/wilddog.js';
                 var api = 'https://board-io.wilddogio.com/';
-
                 window.RLComments = {
                     pageId: null,
                     dataRef: null,
@@ -59,17 +54,23 @@
                         self.dataRef.on('child_added', function (ss2) {
                             // console.log('on child_added', ss2.val());
                             var cmt = ss2.val();
-                            var innerDiv = document.createElement('div');
-                            innerDiv.innerHTML = '<pre>' + cmt.content + '</pre>' + ' <span class="rl-cmts-timestamp">' + (new Date(cmt.time)).toLocaleString() + '</span>'
-                            self.list.appendChild(innerDiv);
+                            var li = document.createElement('div');
+                            if (cmt.title == undefined ) {
+                                cmt.title = ''
+                            }
+                            var cmtContent = cmt.content.replace(/\n/g,"<br/>");
+                            // console.log(cmt.content);
+                            li.innerHTML = '<span class="rl-cmts-title">' + cmt.title + '</span>' + '<p>' + cmtContent + '</p>' + ' <span class="rl-cmts-timestamp">' + (new Date(cmt.time)).toLocaleString() + '</span>'
+                            self.list.appendChild(li);
                             setTimeout(function () {
-                                innerDiv.classList.add('shown');
+                                li.classList.add('shown');
                             }, 160);
                         });
                     },
                     setHtml: function () {
+                        var anonymous = document.createElement('div');
+                        anonymous.id = "anonymous";
                         var self = RLComments;
-
                         self.list = document.createElement('div');
                         self.list.className = 'rl-cmts-list';
                         var html = '';
@@ -78,27 +79,40 @@
                                 continue;
                             }
                             var cmt = this.comments[k];
-                            html += cmt.content + ' <span class="rl-cmts-timestamp">' + (new Date(cmt.time)).toLocaleString() + '</span>';
+                            html += '<li><span class="rl-cmts-title">' + 'cmt.title' + '</span> : ' + cmt.content + ' <span class="rl-cmts-timestamp">' + (new Date(cmt.time)).toLocaleString() + '</span></li>';
                         }
                         self.list.innerHTML = html;
-                        this.container.appendChild(self.list);
-
-
-                        var contentInput = document.getElementById('rlCmtsInputContent'),
+                        this.container.appendChild(anonymous);
+                        anonymous.appendChild(self.list);
+                        var box = document.createElement('div');
+                        box.className = 'rl-cmts-box';
+                        box.innerHTML =
+                                '<input type="text" id="rlCmtsInputTitle" placeholder=" 标题(可不填)"/>' +
+                                '<textarea placeholder=" 匿名发表..."id="rlCmtsInputContent"></textarea>' +
+                                '<button id="rlCmtsSubmit"><i class="fa fa-check"></i></button>';
+                        anonymous.appendChild(box);
+                        var titleInput = document.getElementById('rlCmtsInputTitle'),
+                                contentInput = document.getElementById('rlCmtsInputContent'),
                                 submitBtn = document.getElementById('rlCmtsSubmit');
-
                         submitBtn.addEventListener('click', function () {
+                            var title = titleInput.value.trim();
                             var content = contentInput.value;
-                            if (content.length > 1000) {
-                                return alert('评论内容不能超过1000个字符');
+                            if (title.length > 30) {
+                                return alert('用户名不能超过 30 个字符');
+                            }
+
+                            if (content.length > 300) {
+                                return alert('评论内容不能超过 300 个字符');
                             }
                             if (content.trim() == '') {
                                 return alert('评论内容不能为空');
                             }
                             self.dataRef.push({
+                                title: title,
                                 content: content,
                                 time: Date.now()
                             });
+                            localStorage.title = title;
                             contentInput.value = '';
                         });
                     }
@@ -108,11 +122,11 @@
                     var container = document.getElementById('comments');
                     RLComments.init(id, container);
                 })();
-                $('header').css('visibility','hidden');
             },
             deactivate: function () {
                 $('.rl-cmts-list').remove();
                 $('.rl-cmts-box').remove();
+                $('#anonymous').remove();
             }
         }
     }

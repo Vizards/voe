@@ -123,7 +123,7 @@ Vue.directive('show-comment',{
                     })
                 },1000);
                 window.setInterval(function () {
-                    if ($('.OwO').hasClass('OwO-open') == false) {
+                    if ($('.OwO').length > 0 && $('.OwO').hasClass('OwO-open') == false) {
                             var OwO_demo = new OwO({
                                 logo: '<i class="fa fa-smile-o"></i>',
                                 container: document.getElementsByClassName('OwO')[0],
