@@ -29,6 +29,7 @@
 					.fail(function(err){
 						console.log(err);
 					});
+				document.title = "FlowMine";
 				$('header').css('visibility','visible');
             },
 			deactivate: function () {

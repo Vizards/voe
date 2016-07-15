@@ -724,6 +724,7 @@
         },
         data: function () {
             $('header').css('visibility','hidden');
+            document.title = "分类 - FlowMine";
         }
     }
 </script>

@@ -237,3 +237,15 @@
     url('/assets/fonts/iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
     url('/assets/fonts/iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
+
+@font-face {
+    font-family: "logo";
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/logo/logo.eot'); /* IE9*/
+    src: url('/assets/fonts/logo/logo.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/assets/fonts/logo/logo.woff') format('woff'), /* chrome, firefox */
+    url('/assets/fonts/logo/logo.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('/assets/fonts/logo/logo.svg#iconfont') format('svg'); /* iOS 4.1- */
+
+}

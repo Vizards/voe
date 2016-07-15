@@ -7,6 +7,7 @@
         route: {
             data: function () {
                 $('header').css('visibility','hidden');
+                document.title = "匿名板 - FlowMine";
                 /**
                  *  Usage:
                  *  (function () {

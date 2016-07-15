@@ -176,6 +176,7 @@
 
                         });
                     },1000);
+                document.title = "捐赠 - FlowMine";
                 $('header').css('visibility','hidden');
             }
         }

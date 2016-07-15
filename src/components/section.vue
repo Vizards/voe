@@ -36,7 +36,8 @@
                         <i class="fa fa-share-alt"></i>
                         <span class="social-text">安利给你的朋♂友吧</span>
                     </div>
-                    <span class="social-share" data-source=" Vagabund - Vizards's Blog " data-title={{post.title}} data-description={{post.meta_description}} data-image={{post.image}}></span>
+
+                    <span class="social-share" data-mobile-sites="weibo,qq,douban,twitter" data-source=" Flowmine - Vizards's Blog " data-title={{post.title}} data-weibo-title={{post.title}} data-qq-title={{post.title}} data-description={{post.meta_description}} data-image={{post.image}}></span>
                 </div>
                 </template>
 		</section>

@@ -548,7 +548,7 @@ function os(e) {
         D = function(t) {
             if (! ("WebSocket" in e && i)) return ! 1;
             _.push(i.stringify(t)),
-            M || (M = w.webSocket = new WebSocket("ws://ws.duoshuo.com:8201/"), M.onopen = function() {
+            M || (M = w.webSocket = new WebSocket("wss://ws.duoshuo.com:8201/"), M.onopen = function() {
                 var e;
                 if (M.readyState === 1) while (e = _.shift()) M.send(e)
             },
@@ -2023,5 +2023,3 @@ function os(e) {
                     })
             })
 })(window, document);
-
-//自定义表情文件开始

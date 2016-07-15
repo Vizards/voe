@@ -22,6 +22,7 @@
 				$.get(ghost.url.api('posts/slug/'+tmp_id,{fields:'title,html,created_at,slug,url,image,published_at',limit:'5',page:tmp_id}))
 					.done(function(data){
 					    transition.next({post_content:data.posts[0],showload:false});
+						document.title = data.posts[0].title + " - " + "FlowMine";
                     })
 					.fail(function(err){
 						console.log(err);
