@@ -16,13 +16,13 @@ function sskadmin(e) {
     var ssk = '';
     if (e.user_id == 13326965) {
         if (checkMobile()) {
-            ssk = '<span class="ua"><span class="sskadmin"><i class="fa fa-user"></i></span></span><br><br>';
+            ssk = '<span class="ua"><span class="sskadmin"><i class="fa fa-user"></i></span></span>';
         } else {
             ssk = '<span class="ua"><span class="sskadmin"><i class="fa fa-user"></i></span></span>';
         }
     } else {
         if (checkMobile()) {
-            ssk = '<br><br>';
+            ssk = '';
         }
     }
     return ssk;
@@ -90,7 +90,7 @@ function ua(e) {
         outputer = '<span class="ua_other"><i class="fa fa-globe"></i> 其它浏览器'
     }
     if (checkMobile()) {
-        Mobile = '<br><br>';
+        Mobile = '';
     } else {
         Mobile = '';
     }

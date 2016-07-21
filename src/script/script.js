@@ -32,7 +32,7 @@ addSpace();
     $("body").append($section);
     var $div = $("<div class='content-home text-center'>" +
         "<a class='avatar' id='entrance'>" +
-        "<img src='assets/logo.jpg' alt='avatar'>" +
+        "<img src='assets/logo.png' alt='avatar'>" +
         "</a>" +
         "<h1 class='name'>Vizards</h1>" +
         "<div class='slogan'>愿有岁月可回首，且以深情共白头</div>" +

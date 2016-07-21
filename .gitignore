@@ -1,3 +1,5 @@
 node_modules
 .idea
 .DS_Store
+partials/.DS_Store
+assets/.DS_Store

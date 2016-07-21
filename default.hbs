@@ -10,7 +10,6 @@
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="{{asset 'b.css'}}">
     <link href="//cdn.bootcss.com/highlight.js/9.5.0/styles/xcode.min.css" rel="stylesheet">
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/black/pace-theme-flat-top.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
     {{ghost_head}}
 </head>
@@ -24,7 +23,7 @@
         <header>
                 <a href="/#!/aboutme" class="avatar">
                 <span>愿有岁月可回首</span>
-                <img src="assets/logo.jpg" alt="avatar">
+                <img src="assets/logo.png" alt="avatar">
                 <span>且以深情共白头</span>
             </a>
         </header>
@@ -90,9 +89,15 @@
 <footer>
     <hr>
     <p>Copyright &copy; 2016 Vizards. All Rights Reserved. Powered By Ghost & Vue.js</p>
-    <a href="http://www.miitbeian.gov.cn" target="_blank">皖 ICP 备 16010497 号</a>
-    <span>❤️</span>
+    <p class="analytics">
+        UV: <span id="busuanzi_value_site_pv"></span>&nbsp;️
+        PV: <span id="busuanzi_value_site_uv"></span>&nbsp;
+        ❤️&nbsp;
+        <a href="http://www.miitbeian.gov.cn" target="_blank">皖 ICP 备 16010497 号</a>
+    </p>
 </footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 <script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
 <script src="//cdn.bootcss.com/crypto-js/3.1.2/components/core-min.js"></script>
