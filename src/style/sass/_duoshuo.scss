@@ -199,16 +199,16 @@
                     color: #00a67c;
                 }
                 span.ua {
-                    display: inline-block !important;
+                    display: inline-block;
                     margin: auto 2px;
-                    color: #fff !important;
+                    color: #fff;
                 }
                 .os_other {
-                    background-color: #bdb2a7!important;
+                    background-color: #bdb2a7;
                     color: #fff;
-                    border: 1px solid #BBB!important;
+                    border: 1px solid #BBB;
                     border-radius: 4px;
-                    padding: 0 5px!important;
+                    padding: 0 5px;
                     opacity: .4;
                 }
                 .ua_other {
@@ -678,16 +678,5 @@
                 color: rgb(175,175,175);
             }
         }
-    }
-}
-
-@media (max-width: 768px) {
-    .ds-post-self {
-        flex-direction: column;
-        flex: 1;
-    }
-    .ds-avatar,
-    .ds-comment-body {
-        flex: auto;
     }
 }

@@ -12,5 +12,60 @@
     }
 }
 
-@media screen and (max-width:1024px) {}
+@media screen and (max-width:922px) {
+    #ds-reset {
+        .ds-post {
+            .ds-comment-body {
+                .ds-comment-header {
+                    width: 30%;
+                    span.ua {
+                        display: none;
+                    }
+                }
+                .ds-comment-footer {
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
 
+@media screen and (max-width:768px) {
+    .body {
+        nav,aside {
+            position: absolute;
+        }
+        aside {
+            right: 0;
+        }
+    }
+
+    main {
+        .bl-transition {
+            .post-list {
+                .pub-time {
+                    display: block;
+                    padding: 0.5rem 0 0 0;
+                }
+            }
+        }
+    }
+    .share {
+        margin: 30px 0;
+    }
+    #ds-reset {
+        margin-top: 0;
+    }
+    .not-found {
+        margin-top: 0;
+        .button {
+            margin-bottom: 50px;
+        }
+    }
+    #construction {
+        transform: translateY(0);
+        h2 {
+            display: none;
+        }
+    }
+}
