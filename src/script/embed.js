@@ -640,7 +640,9 @@ function os(e) {
                     e.avatar_url = e.avatar_url.replace(/img\d+\.douban\.com/,"img2.doubanio.com");
                     e.avatar_url = e.avatar_url.replace(/app\.qlogo\.cn/,"nzvcelvwu.qnssl.com");
                     e.avatar_url = e.avatar_url.replace(/wx\.qlogo\.cn/,"nzwsf9aei.qnssl.com");
-                    e.avatar_url = e.avatar_url.replace(/tp\d+\.sinaimg\.cn/,"nzqv0a582.qnssl.com");
+                    e.avatar_url = e.avatar_url.replace(/hdn\.xnimg\.cn/,"nzrj4etbg.qnssl.com");
+                    e.avatar_url = e.avatar_url.replace(/img\.t\.sinajs\.cn/,"nznlz6ohs.qnssl.com");
+                    e.avatar_url = e.avatar_url.replace(/tp\d+\.sinaimg\.cn/,"odfhb4m72.qnssl.com");
                 }else{
                     nt.data.default_avatar_url=nt.data.default_avatar_url.replace(/^http\:\/\//,"https://");
                 }
