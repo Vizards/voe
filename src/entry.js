@@ -13,34 +13,34 @@ Vue.use(Router);
 var router = new Router();
 
 router.map({
-	'/':{
-		name:'index',
-		component:require('./views/page.vue')
+	'/': {
+		name: 'index',
+		component: require('./views/page.vue')
 	},
-	'/page/:id':{
-		name:'page',
-		component:require('./views/page.vue')
+	'/page/:id': {
+		name: 'page',
+		component: require('./views/page.vue')
 	},
-	'/post/:slug':{
-		name:'post',
-		component:require('./views/post.vue')
+	'/post/:slug': {
+		name: 'post',
+		component: require('./views/post.vue')
 	},
-    '/category/':{
-        name:'category',
-        component:require('./views/category.vue')
-    },
-	'/tag/:id':{
-        name:'tag',
-        component:require('./views/tag.vue')
+  '/category/': {
+    name: 'category',
+    component: require('./views/category.vue')
+  },
+	'/tag/:id': {
+    name: 'tag',
+    component: require('./views/tag.vue')
 	},
-    '/anonymous/':{
-        name: 'anonymous',
-        component:require('./views/anonymous.vue')
-    },
-    '/donate/':{
-        name: 'donate',
-        component:require('./views/donate.vue')
-    },
+  '/anonymous/': {
+    name: 'anonymous',
+    component: require('./views/anonymous.vue')
+  },
+  '/donate/': {
+    name: 'donate',
+    component: require('./views/donate.vue')
+  },
 	'*':{
 		component:require('./views/404.vue')
 	}
