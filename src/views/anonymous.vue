@@ -99,14 +99,17 @@
                             var title = titleInput.value.trim();
                             var content = contentInput.value;
                             if (title.length > 30) {
-                                return alert('用户名不能超过 30 个字符');
+                                return alert('标题不能超过 30 个字符');
                             }
 
                             if (content.length > 300) {
-                                return alert('评论内容不能超过 300 个字符');
+                                return alert('留言内容不能超过 300 个字符');
+                            }
+                            if (content.length < 20) {
+                                return alert('留言内容不能少于 20 个字符')
                             }
                             if (content.trim() == '') {
-                                return alert('评论内容不能为空');
+                                return alert('留言内容不能为空');
                             }
                             self.dataRef.push({
                                 title: title,
