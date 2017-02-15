@@ -256,7 +256,7 @@ function os(e) {
                 renren: "<i class='icon-renren'></i>",
                 netease: "<i class='icon-wangyi'></i>",
                 kaixin: "<i class='icon-kx001'></i>",
-                sohu: "",
+                weixin: "<i class='icon-wechat'></i>",
                 baidu: "<i class='icon-baidu'></i>",
                 google: "<i class='icon-google'></i>"
             },
@@ -267,7 +267,7 @@ function os(e) {
                 renren: "<i class='icon-renren'></i>",
                 netease: "<i class='icon-wangyi'></i>",
                 kaixin: "<i class='icon-kx001'></i>",
-                sohu: "",
+                weixin: "<i class='icon-wechat'></i>",
                 baidu: "<i class='icon-baidu'></i>",
                 google: "<i class='icon-google'></i>"
             },
@@ -676,7 +676,7 @@ function os(e) {
             waitingImg: g('<div id="ds-waiting"></div>'),
             serviceList: function(e) {
                 var t = '<ul class="ds-service-list">',
-                    n = ["weibo", "qq", "renren", "douban","kaixin","netease", "baidu", "google"],
+                    n = ["weibo", "qq", "renren", "douban","kaixin","netease", "baidu", "google", "weixin"],
                     r = 0;
                 for (; r < n.length; r++) t += J.loginItem(n[r], e);
                 return t + "</ul>"
@@ -1020,7 +1020,7 @@ function os(e) {
                                 renren: [420, 322],
                                 qq: [504, 445],
                                 netease: [810, 645],
-                                sohu: [972, 600],
+                                weixin: [450, 550],
                                 google: [600, 440],
                                 taobao: [480, 585]
                             } [t] || [550, 400];
@@ -1275,7 +1275,7 @@ function os(e) {
                                         i(t.body).unbind("click", E)
                                 },
                                 S = function(e, t) {
-                                    var n = j('<div class="ds-icons-32">' + i.map(["weibo", "qq", "renren", "kaixin", "douban", "netease", "baidu", "google"],
+                                    var n = j('<div class="ds-icons-32">' + i.map(["weibo", "qq", "renren", "kaixin", "douban", "netease", "baidu", "google", "weixin"],
                                             function(e) {
                                                 return '<a class="ds-' + e + '" href="' + J.loginUrl(e) + '">' + w.sourceName[e] + "</a>"
                                             }).join("") + "</div>" + (s.deny_anonymous ? "": '<h2>\u4f5c\u4e3a\u6e38\u5ba2\u7559\u8a00</h2><form><div class="ds-control-group"><input type="text" name="author_name" id="ds-dialog-name" placeholder="昵称 *" value="' + p(rt.data.name) + '" required />' + '<label for="ds-dialog-name">\u540d\u5b57(\u5fc5\u586b)</label>' + "</div>" + (s.require_guest_email ? '<div class="ds-control-group"><input type="email" name="author_email" id="ds-dialog-email" placeholder="邮箱 *" value="' + p(rt.data.email) + '" required />' + '<label for="ds-dialog-email">\u90ae\u7bb1(\u5fc5\u586b)</label>' + "</div>": "") + (s.require_guest_url ? '<div class="ds-control-group"><input type="url" name="author_url" id="ds-dialog-url" placeholder="http://" value="' + p(rt.data.url || "") + '" />' + '<label for="ds-dialog-url">\u7f51\u5740(\u53ef\u9009)</label>' + "</div>": "") + '<button type="submit">\u53d1\u5e03</button>' + "</form>"));
@@ -1395,7 +1395,7 @@ function os(e) {
                                 douban: "\u8c46\u74e3\u7f51",
                                 baidu: "\u767e\u5ea6\u641c\u85cf",
                                 netease: "\u7f51\u6613\u5fae\u535a",
-                                sohu: "\u641c\u72d0\u5fae\u535a"
+                                weixin: "\u641c\u72d0\u5fae\u535a"
                             },
                             n = [];
                         for (var r in t) n.push('<li><a class="ds-share-to-' + r + " ds-service-link ds-" + r + '" href="' + w.hostUrl + "/share-proxy/?" + w.param({
@@ -1945,7 +1945,7 @@ function os(e) {
                     }),
                     J.loginWidget = function() {
                         var e = '<div class="ds-icons-32">';
-                        return i.each(["weibo", "qq", "renren", "kaixin", "douban", "netease", "sohu"],
+                        return i.each(["weibo", "qq", "renren", "kaixin", "douban", "netease", "weixin"],
                             function(t, n) {
                                 e += '<a class="ds-' + n + '" href="' + J.loginUrl(n) + '">' + w.sourceName[n] + "</a>"
                             }),
