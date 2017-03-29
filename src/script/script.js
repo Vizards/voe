@@ -83,7 +83,7 @@ addSpace();
             $('body').css("overflow", "auto");
         });
     });
-    if (window.location.hash !== '#!/' && window.location.hash !== '') {
+    if (window.location.pathname !== '/') {
         $("#gradient").remove();
         $('body').css("overflow", "auto");
     } else {
