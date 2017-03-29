@@ -10,7 +10,10 @@ require('./script/emoji.js');
 
 Vue.use(Router);
 
-var router = new Router();
+router = new Router({
+  hashbang: false,
+  history: true,
+});
 
 router.map({
 	'/': {
