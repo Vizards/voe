@@ -26,7 +26,6 @@ function addSpace() {
 
 addSpace();
 
-
 (function() {
     var $section = $("<section id='gradient'></section>");
     $("body").append($section);
@@ -86,7 +85,7 @@ addSpace();
     if (window.location.pathname !== '/') {
         $("#gradient").remove();
         $('body').css("overflow", "auto");
-    } else {
+    } else  {
         $("#gradient").css('display', 'block');
         $('body').css("overflow", "hidden");
     }
