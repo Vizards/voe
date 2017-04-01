@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "owo": "^1.0.2",
-    "trim-html": "^0.1.7"
+    "trim-html": "^0.1.7",
+    "vue-head": "^2.0.10"
   }
 }

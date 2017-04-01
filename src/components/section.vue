@@ -51,7 +51,5 @@
 		components:{
 			'myComment':require('../components/comment.vue')
         },
-        data:function () {
-        }
 	}
 </script>

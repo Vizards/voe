@@ -1,5 +1,6 @@
 var Vue = require('vue'),
 	Router = require('vue-router'),
+  Meta = require('vue-head'),
     trimHtml = require('trim-html'),
     OwO = require('owo');
 
@@ -9,6 +10,7 @@ require('./script/embed.js');
 require('./script/emoji.js');
 
 Vue.use(Router);
+Vue.use(Meta);
 
 var router = new Router({
   hashbang: false,
