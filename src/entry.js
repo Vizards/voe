@@ -30,11 +30,7 @@ router.map({
 		name: 'post',
 		component: require('./views/post.vue')
 	},
-  '/category/': {
-    name: 'category',
-    component: require('./views/category.vue')
-  },
-	'/tag/:id': {
+	'/tag/': {
     name: 'tag',
     component: require('./views/tag.vue')
 	},

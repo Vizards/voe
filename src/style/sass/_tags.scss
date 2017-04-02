@@ -1,0 +1,22 @@
+.tags {
+  max-width: 600px;
+  margin: 5em auto;
+  h2 {
+    color: #34495e;
+    font-size: 1.5em;
+    line-height: 1.6;
+  }
+  span {
+    margin-right: 20px;
+    color: #7f8c8d;
+  }
+  a {
+    color: #00a67c;
+    word-spacing: .2em;
+    letter-spacing: 1px;
+    line-height: 1.5;
+  }
+  a:hover {
+    color: #267b54;
+  }
+}

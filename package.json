@@ -24,6 +24,7 @@
     "webpack": "^1.12.13"
   },
   "dependencies": {
+    "moment": "^2.18.1",
     "owo": "^1.0.2",
     "trim-html": "^0.1.7",
     "vue-head": "^2.0.10"
